@@ -38,4 +38,4 @@ python3 -m http.server 8000
 
 ## Deploy
 
-Live on Netlify: https://mashroui.netlify.app — no build step, the folder is published as-is. The order backup uses Netlify Forms, so it only works when hosted on Netlify.
+Live on Netlify: https://mashru3i.netlify.app — no build step, the folder is published as-is. The order backup uses Netlify Forms, so it only works when hosted on Netlify.

@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>مشروعي — مشاريع وبحوث التخرّج</title>
-<meta name="description" content="مشروعي: مشاريع تخرّج برمجية، بحوث وتقارير، وتحضير للمناقشة لطلاب المرحلة الأخيرة.">
+<title>مشروعي | مشاريع وبحوث التخرّج</title>
+<meta name="description" content="مشروعي يديره صالح صفاء، خريج علوم الحاسوب من جامعة بغداد بتقدير امتياز. نبني مشروع تخرّجك البرمجي وياك أو إلك ونشرحلك كل سطر، ونجهّز وياك البحث والتقرير والمناقشة.">
 <meta name="theme-color" content="#C8502E">
 <link rel="canonical" href="https://mashru3i.netlify.app/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_IQ">
 <meta property="og:site_name" content="مشروعي">
-<meta property="og:title" content="مشروعي — مشروع تخرّجك وبحثك من الفكرة إلى المناقشة">
-<meta property="og:description" content="مشاريع تخرّج برمجية، بحوث وتقارير، وتحضير للمناقشة لطلاب المرحلة الأخيرة — على مراحل واضحة، وأنت متابع كل خطوة.">
+<meta property="og:title" content="مشروعي | مشروع تخرّجك وبحثك من الفكرة إلى المناقشة">
+<meta property="og:description" content="مشاريع تخرّج برمجية نبنيها وياك أو إلك ونشرحلك كل سطر، بحوث وتقارير بمصادر موثّقة، وتحضير للمناقشة. بإشراف صالح صفاء، علوم الحاسوب، جامعة بغداد.">
 <meta property="og:url" content="https://mashru3i.netlify.app/">
 <meta property="og:image" content="https://mashru3i.netlify.app/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -19,7 +19,6 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<script>try{if(sessionStorage.getItem('ms-intro'))document.documentElement.classList.add('no-intro');sessionStorage.setItem('ms-intro','1')}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap">
@@ -33,9 +32,9 @@ a{color:#1E2233;text-decoration:none}a:hover{color:#A3402A}
 .m-btn{height:58px;padding:0 28px;border-radius:16px;border:0;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Alexandria','IBM Plex Sans Arabic',sans-serif;font-weight:700;font-size:19px;cursor:pointer;white-space:nowrap}
 .m-btn-or{background:#C8502E;color:#FFFFFF;box-shadow:0 10px 24px rgba(200,80,46,.28)}
 .m-btn-or:hover{background:#B04425;color:#FFFFFF}
-.m-btn-out{background:#FFFFFF;color:#1E2233;border:2px solid #E7DAC0}
+.m-btn-out{background:#FFFFFF;color:#1E2233;border:2px solid #B5A07C}
 .m-btn-out:hover{border-color:#C8502E;color:#1E2233}
-.m-card{border-radius:24px;border:1.5px solid #EFE4CF;background:#FFFFFF}
+.m-card{border-radius:24px;border:1.5px solid #E0CDAA;background:#FFFFFF}
 .m-tag{height:30px;padding:0 12px;border-radius:999px;background:#FDE7D8;color:#8F3520;font-size:13px;font-weight:600;display:inline-flex;align-items:center}
 .m-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;font-family:'Alexandria','IBM Plex Sans Arabic',sans-serif;font-weight:600;font-size:18px;color:#1E2233}
 .m-faq summary::-webkit-details-marker{display:none}
@@ -45,61 +44,33 @@ a{color:#1E2233;text-decoration:none}a:hover{color:#A3402A}
 .nav.scrolled{background:rgba(255,255,255,.72)!important;-webkit-backdrop-filter:blur(14px) saturate(160%);backdrop-filter:blur(14px) saturate(160%);box-shadow:0 6px 20px rgba(30,34,51,.06)}
 button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #C8502E;outline-offset:2px}
 
-/* loader */
-.ld{position:fixed;inset:0;z-index:50;background:#FBF5EA;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;overflow:hidden;animation:ldOut .45s ease-in 2.5s forwards}
-.no-intro .ld{display:none}
-.ld-stage{position:relative;width:420px;height:320px;max-width:calc(100vw - 32px)}
-.ld-halo{position:absolute;left:50%;top:46%;width:300px;height:300px;margin:-150px 0 0 -150px;border-radius:50%;background:#FDE7D8;animation:ldHalo .9s ease-out .3s both}
-@keyframes ldHalo{from{transform:scale(.3);opacity:0}to{transform:none;opacity:1}}
-.ld-conf{position:absolute;inset:0;z-index:0}
-.ld-piece{position:absolute;left:50%;top:44%;display:block;opacity:0;animation:ldConf 2.3s cubic-bezier(.12,.75,.35,1) both}
-.ld-cap{position:relative;z-index:1;width:100%;height:100%;animation:ldDrop 1s cubic-bezier(.34,1.45,.5,1) .1s both}
-.ld-float{width:100%;height:100%;animation:ldFloat 2.6s ease-in-out 1.2s infinite}
-.ld-name{animation:ldText .6s ease-out .9s both;transform-box:fill-box;transform-origin:center}
-.ld-tassel{animation:ldSway 1.8s ease-in-out .9s infinite;transform-box:view-box;transform-origin:362px 112px}
-.ld-tag{font-family:'Alexandria',sans-serif;font-weight:600;font-size:20px;color:#A3402A;animation:ldUp .6s ease-out 1.2s both}
-.ld-bar{width:220px;height:6px;border-radius:999px;background:#F3E8D2;overflow:hidden;animation:ldUp .6s ease-out 1.2s both}
-.ld-bar span{display:block;height:100%;width:100%;background:#C8502E;border-radius:999px;transform-origin:right;animation:ldFill 1.5s ease-in-out .9s both}
-.ld-skip{position:absolute;top:24px;left:24px;height:44px;padding:0 18px;border-radius:12px;border:1.5px solid #E7DAC0;background:#FFFFFF;color:#1E2233;font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:600;font-size:14px;cursor:pointer}
-@keyframes ldDrop{0%{transform:translateY(-170px) rotate(-14deg) scale(.6);opacity:0}100%{transform:none;opacity:1}}
-@keyframes ldFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8px) rotate(-1.5deg)}}
-@keyframes ldText{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
-@keyframes ldSway{0%,100%{transform:rotate(0)}50%{transform:rotate(8deg)}}
-@keyframes ldUp{from{opacity:0;transform:translateY(10px)}}
-@keyframes ldFill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-@keyframes ldConf{0%{transform:translate(-50%,-50%) rotate(0);opacity:0}8%{opacity:1}55%{transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) rotate(var(--r));opacity:1}100%{transform:translate(calc(-50% + var(--x) * 1.25),calc(-50% + var(--y) + 260px)) rotate(calc(var(--r) * 2));opacity:0}}
-@keyframes ldOut{to{opacity:0;visibility:hidden}}
-@media (prefers-reduced-motion: reduce){.ld *{animation-duration:.01s!important;animation-delay:0s!important;animation-iteration-count:1!important}}
-
-.m-root,.m-root *{cursor:url(assets/cursor.svg) 2 11, auto}
-.m-root a,.m-root button,.m-root summary,.m-root a *,.m-root button *,.m-root summary *{cursor:url(assets/cursor-hover.svg) 2 11, pointer}
-.m-root input,.m-root textarea{cursor:text}
-.m-fhead{font-family:'Alexandria','IBM Plex Sans Arabic',sans-serif;font-weight:700;font-size:16px;color:#FBF5EA;display:flex;flex-direction:column;gap:10px;margin-bottom:4px}
-.m-fhead::after{content:"";width:28px;height:3px;border-radius:999px;background:#C8502E}
+.m-fhead{font-family:'Alexandria','IBM Plex Sans Arabic',sans-serif;font-weight:700;font-size:16px;color:#FBF5EA;margin-bottom:4px}
 .m-flink{color:rgba(251,245,234,.74)!important;font-size:15px;transition:color .15s;align-self:flex-start}
 .m-flink:hover{color:#FFFFFF!important}
-.m-soc{width:44px;height:44px;border-radius:12px;background:rgba(251,245,234,.07);border:1px solid rgba(251,245,234,.14);color:#FBF5EA!important;display:flex;align-items:center;justify-content:center;transition:background-color .15s,border-color .15s}
-.m-soc:hover{background:#C8502E;border-color:#C8502E}
-.m-burger{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid #E7DAC0;background:#FFFFFF;color:#1E2233;align-items:center;justify-content:center;flex-shrink:0}
+.m-burger{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid #B5A07C;background:#FFFFFF;color:#1E2233;align-items:center;justify-content:center;flex-shrink:0}
 .m-short{display:none}
 .m-mnav{display:none}
+.m-mob{display:none}
+.m-br{display:none}
 @media (max-width:760px){
   .m-wrap{padding:0 16px}
   .m-nav-links{display:none}
   .m-burger{display:flex}
   .m-short{display:inline}
   .m-long{display:none}
+  .m-dsk{display:none!important}
+  .m-mob{display:block}
+  .m-br{display:inline}
   .m-head{height:68px!important;gap:10px!important}
   .m-logo{gap:10px!important}
   .m-logo svg{width:40px;height:40px}
   .m-logo .m-disp{font-size:21px!important}
   .m-cta-top{height:44px!important;padding:0 16px!important;font-size:16px!important;border-radius:12px!important}
-  .m-mnav{display:flex;flex-direction:column;gap:2px;padding:6px 16px 14px;border-top:1px solid #F3EBDC}
-  .m-mnav a{height:48px;display:flex;align-items:center;font-weight:600;font-size:16px}
-  .m-h1{font-size:36px!important}
+  .m-mnav{display:flex;flex-direction:column;gap:2px;padding:6px 16px 14px;border-top:1px solid #EFE4CF}
+  .m-mnav a{height:48px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:16px}
+  .m-h1{font-size:32px!important;line-height:1.35!important}
   .m-h2{font-size:28px!important}
   .m-sec{padding:64px 0!important}
-  .ld-stage{width:320px;height:245px}
 }
 </style>
 <style>
@@ -107,40 +78,142 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 .m-h1,.m-h2{text-wrap:balance}
 .m-shead{max-width:760px!important}
-/* hero tracker */
+.m-mnav[hidden]{display:none!important}
+.m-lead{margin:0;font-size:17px;line-height:1.8;color:#5A607A}
+
+/* hero */
+.m-hero{padding-top:72px;padding-bottom:96px;display:flex;flex-wrap:wrap;gap:56px;align-items:center}
+.m-hero-txt{flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:26px}
+.m-hero-btns{display:flex;flex-wrap:wrap;gap:12px}
+.m-wa-btn{gap:12px;padding:0 18px 0 26px}
+.m-wa-btn img{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0;display:block;box-shadow:0 0 0 2px #FFFFFF,0 0 0 3.5px #1E9E52}
+.m-wa-txt{display:flex;flex-direction:column;align-items:flex-start;line-height:1.3;font-size:17px}
+.m-wa-txt small{font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:600;font-size:12px;color:#5A607A}
+.m-promise{list-style:none;margin:0;padding:4px 0 0;display:flex;flex-direction:column;gap:10px;font-size:15px;color:#1E2233}
+.m-promise li{display:flex;align-items:flex-start;gap:10px;line-height:1.6}
+.m-promise svg{flex-shrink:0;margin-top:2px;color:#C8502E}
+
+/* tracker (example) */
 .tk{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
-.tk li{position:relative;display:flex;align-items:center;gap:12px;min-height:28px;padding-bottom:22px}
+.tk li{position:relative;display:flex;align-items:center;gap:12px;min-height:28px;padding-bottom:20px}
 .tk li:last-child{padding-bottom:0}
-.tk li:not(:last-child)::before{content:"";position:absolute;right:13px;top:28px;bottom:0;width:2px;background:#EFE4CF}
+.tk li:not(:last-child)::before{content:"";position:absolute;right:13px;top:28px;bottom:0;width:2px;background:#E0CDAA}
 .tk li.tk-done::before{background:#C8502E}
-.tk-dot{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;border:2px solid #E7DAC0;background:#FFFFFF;color:#FFFFFF;box-sizing:border-box}
+.tk-dot{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;border:2px solid #A08E72;background:#FFFFFF;color:#FFFFFF;box-sizing:border-box}
 .tk-done .tk-dot{background:#C8502E;border-color:#C8502E}
 .tk-now .tk-dot{border:2.5px solid #C8502E;background:#FFF4EC}
 .tk-now .tk-dot span{width:10px;height:10px;border-radius:50%;background:#C8502E}
 .tk-txt{font-weight:600;font-size:15px;line-height:1.4;color:#5A607A}
 .tk-done .tk-txt,.tk-now .tk-txt{font-weight:700;color:#1E2233}
 .tk-txt em{font-style:normal;font-size:12px;font-weight:700;color:#8F3520;margin-inline-start:6px}
-.m-mnav[hidden]{display:none!important}
+.ex-lbl{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:999px;border:1.5px dashed #A08E72;color:#5A607A;font-size:13px;font-weight:700;background:#FFFFFF}
+.wa-chat{border-radius:18px;background:#EFEAE2;padding:12px 12px 14px;display:flex;flex-direction:column;gap:10px}
+.wa-top{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#1E2233}
+.wa-top img{width:30px;height:30px;border-radius:50%;object-fit:cover;display:block}
+.wa-app{margin-inline-start:auto;display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:#0E7A50}
+.wa-bubble{position:relative;align-self:flex-start;max-width:94%;margin-inline-start:8px;background:#FFFFFF;border-radius:12px 0 12px 12px;padding:8px 12px 6px;font-size:14px;line-height:1.65;color:#1E2233;box-shadow:0 1px 1px rgba(30,34,51,.1)}
+.wa-bubble::before{content:"";position:absolute;top:0;right:-8px;border-top:9px solid #FFFFFF;border-right:9px solid transparent}
+.wa-time{display:block;text-align:left;font-size:11px;color:#667781;margin-top:2px}
+
+/* founder */
+.ab{display:flex;flex-wrap:wrap;gap:44px 64px;align-items:center}
+.ab-photo{flex:1 1 320px;max-width:400px;margin:0}
+.ab-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:28px;background:#EFE4CF}
+.ab-txt{flex:999 1 420px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.ab-name{margin:0;font-weight:800;font-size:30px;line-height:1.3;color:#C8502E}
+.ab-role{margin:2px 0 0;font-size:15px;font-weight:600;color:#5A607A}
+.ab-facts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.ab-facts li{display:flex;align-items:center;gap:14px}
+.ab-ic{width:44px;height:44px;border-radius:13px;background:#FDE7D8;color:#A3402A;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ab-facts b{display:block;font-size:16px;line-height:1.5}
+.ab-facts small{display:block;font-size:14px;color:#5A607A;line-height:1.5}
+.ab-quote{margin:0;padding:4px 18px 4px 0;border-inline-start:3px solid #C8502E;display:flex;flex-direction:column;gap:6px}
+.ab-quote p{margin:0;font-size:17px;line-height:1.85;color:#1E2233}
+.m-more{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:700;font-size:15px;color:#A3402A;align-self:flex-start}
+.m-more:hover{color:#8F3520}
+
+/* work (navy) */
+.wk{background-color:#14204A;color:#FBF5EA}
+.wk-head{display:flex;flex-direction:column;gap:14px;max-width:780px}
+.wk-badge{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:999px;background:#C8502E;color:#FFFFFF;font-weight:700;font-size:14px}
+.wk-head p{margin:0;font-size:17px;line-height:1.85;color:rgba(251,245,234,.8)}
+.wk-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 24px}
+.wk-grid figure{margin:0;display:flex;flex-direction:column;gap:12px}
+.wk-grid img{display:block;width:100%;height:auto;aspect-ratio:708/515;object-fit:cover;object-position:top right;border-radius:16px;border:1px solid rgba(251,245,234,.16);background:#0C1533}
+.wk-grid figcaption{font-size:15px;line-height:1.75;color:rgba(251,245,234,.82)}
+.wk-grid figcaption b{color:#FBF5EA}
+.wk-hint{display:none}
+.wk-tech{list-style:none;margin:0;padding:22px 0 0;border-top:1px solid rgba(251,245,234,.14);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 24px}
+.wk-tech li{display:flex;flex-direction:column;gap:4px}
+.wk-tech span{font-size:13px;color:rgba(251,245,234,.68)}
+.wk-tech b{font-size:15px;line-height:1.6;color:#FBF5EA;font-weight:600}
+
+/* services */
+.sv-card{flex:1 1 300px;padding:30px;border-radius:24px;background:#FFFFFF;border:1.5px solid #E0CDAA;display:flex;flex-direction:column;gap:16px}
+.sv-ic{width:56px;height:56px;border-radius:17px;background:#FDE7D8;color:#A3402A;display:flex;align-items:center;justify-content:center}
+.sv-card p{margin:0;font-size:15px;line-height:1.8;color:#5A607A}
+.md{border-radius:24px;border:1.5px solid #E0CDAA;background:#FFFFFF;padding:28px 30px;display:flex;flex-direction:column;gap:18px}
+.md-row{display:flex;flex-wrap:wrap;gap:16px}
+.md-opt{flex:1 1 280px;border-radius:18px;background:#FBF5EA;padding:20px 22px;display:flex;flex-direction:column;gap:8px}
+.md-opt b{font-family:'Alexandria','IBM Plex Sans Arabic',sans-serif;font-size:18px;font-weight:700}
+.md-opt p{margin:0;font-size:15px;line-height:1.8;color:#5A607A}
+.md-note{margin:0;font-size:15px;font-weight:600;color:#1E2233;display:flex;align-items:center;gap:10px}
+
+/* how: vertical timeline built from the tracker's dots and line */
+.tk.tk-lg li{align-items:flex-start;gap:18px;padding-bottom:32px}
+.tk.tk-lg li:last-child{padding-bottom:0}
+.tk.tk-lg li:not(:last-child)::before{right:17px;top:40px;bottom:4px;background:#E0CDAA}
+.tk.tk-lg .tk-dot{width:36px;height:36px;border:2.5px solid #C8502E;background:#FFF4EC;color:#8F3520;font-family:'Alexandria',sans-serif;font-weight:800;font-size:15px}
+.tk.tk-lg li:last-child .tk-dot{background:#C8502E;color:#FFFFFF}
+.tk-lg h3{margin:4px 0 6px;font-family:'Alexandria','IBM Plex Sans Arabic',sans-serif;font-size:19px;font-weight:700;line-height:1.45}
+.tk-lg p{margin:0;font-size:15px;line-height:1.8;color:#5A607A}
+
+/* footer */
+.f-card{display:flex;align-items:center;gap:12px;padding:14px;border-radius:16px;background:rgba(251,245,234,.06);border:1px solid rgba(251,245,234,.16);color:#FBF5EA!important}
+.f-card:hover{background:rgba(251,245,234,.1)}
+.f-card .f-ic{width:42px;height:42px;border-radius:12px;background:#C8502E;color:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.f-card small{display:block;font-size:12px;color:rgba(251,245,234,.68)}
+.f-card b{display:block;font-size:16px;letter-spacing:.3px}
+
+/* floating WhatsApp (mobile only) */
+.m-fab{display:none}
+
+@media (max-width:760px){
+  .m-hero{padding-top:28px;padding-bottom:64px;gap:40px}
+  .m-hero-txt{gap:20px}
+  .m-hero-btns .m-btn{width:100%}
+  .m-cta .m-btn{width:100%}
+  .m-lead{font-size:16px}
+  .ab{gap:28px}
+  .ab-photo{max-width:none;flex-basis:100%}
+  .ab-photo img{aspect-ratio:1/1;object-position:50% 22%}
+  .ab-name{font-size:26px}
+  .ab-quote p{font-size:16px}
+  .wk-grid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;margin:0 -16px;padding:0 16px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .wk-grid::-webkit-scrollbar{display:none}
+  .wk-grid figure{flex:0 0 86%;scroll-snap-align:start}
+  .wk-hint{display:flex;align-items:center;gap:8px;margin:-24px 0 0;font-size:13px;color:rgba(251,245,234,.68)}
+  .wk-tech{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sv-card{padding:24px}
+  .md{padding:22px 18px}
+  .md-opt{padding:18px}
+  .m-faq summary{padding:18px 18px;font-size:17px}
+  .m-faq p{padding:0 18px 20px!important}
+  .m-cta-box{padding:36px 22px!important}
+  .m-cta{padding-bottom:64px!important}
+  .m-cta-box p{font-size:18px!important}
+  #faq.m-faqs{padding:0 0 56px!important}
+  .m-faqs-in{padding-top:56px!important}
+  .f-cols{gap:28px!important}
+  .m-fab{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:45;width:56px;height:56px;border-radius:50%;background:#1E9E52;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(20,32,74,.3);transition:opacity .2s,transform .2s,visibility .2s}
+  .m-fab:hover{color:#FFFFFF;background:#178A46}
+  .m-fab.m-fab-off{opacity:0;visibility:hidden;transform:translateY(12px) scale(.9);pointer-events:none}
+}
+@media (prefers-reduced-motion: reduce){.m-fab{transition:none}}
 </style>
 </head>
 <body>
 <div class="m-root" dir="rtl" style="width: 100%; position: relative; background: #FBF5EA; color: #1E2233; font-family: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif">
-
-  <!-- INTRO LOADER -->
-  <div class="ld" id="loader" role="status" aria-label="جارٍ التحميل">
-      <button type="button" class="ld-skip" id="ld-skip">تخطّي</button>
-      <div class="ld-stage">
-        <span class="ld-halo" aria-hidden="true"></span>
-        <div class="ld-conf" id="ld-conf" aria-hidden="true">
-          
-        </div>
-        <div class="ld-cap"><div class="ld-float">
-          <svg viewBox="0 0 400 280" width="100%" height="100%" aria-hidden="true"><ellipse cx="200" cy="262" rx="120" ry="12" fill="#14204A" fill-opacity=".1"></ellipse><path d="M100 128V196Q200 250 300 196V128L200 172Z" fill="#14204A"></path><path d="M100 196Q200 250 300 196" fill="none" stroke="#0C1533" stroke-width="3"></path><polygon points="200,34 392,110 200,186 8,110" fill="#A3402A"></polygon><polygon points="200,22 390,98 200,174 10,98" fill="#C8502E"></polygon><polygon points="200,40 345,98 200,156 55,98" fill="none" stroke="#FFFFFF" stroke-opacity=".4" stroke-width="2" stroke-dasharray="6 6"></polygon><g class="ld-tassel"><path d="M300 98Q345 100 362 116V192" fill="none" stroke="#E3A531" stroke-width="5" stroke-linecap="round"></path><path d="M351 192h22l7 50h-36Z" fill="#E3A531"></path><rect x="349" y="186" width="26" height="9" rx="3" fill="#C98E1E"></rect></g><circle cx="300" cy="98" r="8" fill="#FFFFFF"></circle></svg>
-        </div></div>
-      </div>
-      <div class="ld-tag">من الفكرة إلى المناقشة</div>
-      <div class="ld-bar"><span></span></div>
-    </div>
 
   <!-- NAV -->
   <header class="nav" id="nav" style="background: #FFFFFF; border-bottom: 1px solid #EFE4CF">
@@ -150,9 +223,10 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
         <span class="m-disp" style="font-weight: 800; font-size: 24px; color: #1E2233">مشروعي<span style="color: #C8502E">.</span></span>
       </a>
       <nav class="m-nav-links" aria-label="القائمة الرئيسية">
+        <a href="#about" style="font-weight: 600; font-size: 15px">المؤسس</a>
+        <a href="#work" style="font-weight: 600; font-size: 15px">شغل حقيقي</a>
         <a href="#services" style="font-weight: 600; font-size: 15px">الخدمات</a>
         <a href="#how" style="font-weight: 600; font-size: 15px">كيف نشتغل</a>
-        <a href="#fields" style="font-weight: 600; font-size: 15px">التخصصات</a>
         <a href="#faq" style="font-weight: 600; font-size: 15px">الأسئلة الشائعة</a>
       </nav>
       <div style="display: flex; align-items: center; gap: 8px">
@@ -163,168 +237,227 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
       </div>
     </div>
     <nav class="m-mnav" id="mnav" hidden aria-label="قائمة التلفون">
-        <a href="#services">الخدمات</a>
-        <a href="#how">كيف نشتغل</a>
-        <a href="#fields">التخصصات</a>
-        <a href="#faq">الأسئلة الشائعة</a>
-      </nav>
+      <a href="#about">المؤسس</a>
+      <a href="#work">شغل حقيقي</a>
+      <a href="#services">الخدمات</a>
+      <a href="#how">كيف نشتغل</a>
+      <a href="#faq">الأسئلة الشائعة</a>
+      <a href="https://www.instagram.com/mashru.3i/" target="_blank" rel="noopener" style="color: #A3402A"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg>تابعنا على إنستغرام</a>
+    </nav>
   </header>
 
   <!-- HERO -->
   <section id="top" style="background-color: #FBF5EA; background-image: repeating-linear-gradient(60deg, rgba(200,80,46,.07) 0 1px, transparent 1px 26px), repeating-linear-gradient(-60deg, rgba(200,80,46,.07) 0 1px, transparent 1px 26px)">
-    <div class="m-wrap" style="padding-top: 72px; padding-bottom: 96px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
-      <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 26px">
+    <div class="m-wrap m-hero">
+      <div class="m-hero-txt">
         <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 16px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #EBC3B4; color: #8F3520; font-weight: 700; font-size: 14px">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"></path><path d="M6 12v5c3 2 9 2 12 0v-5"></path></svg>
           لطلاب المرحلة الأخيرة
         </span>
-        <h1 class="m-disp m-h1" style="margin: 0; font-size: 56px; line-height: 1.3; font-weight: 800; text-wrap: balance">مشروع تخرّجك وبحثك<br><span style="color: #C8502E">من الفكرة إلى المناقشة</span></h1>
-        <p style="margin: 0; font-size: 19px; line-height: 1.85; color: #5A607A; max-width: 560px">فريق مهندسين ومختصين يبني مشروعك البرمجي، يكتب بحثك بمصادر موثّقة، ويجهّزك لأسئلة اللجنة — على مراحل واضحة، وأنت متابع كل خطوة.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 12px">
+        <h1 class="m-disp m-h1" style="margin: 0; font-size: 56px; line-height: 1.3; font-weight: 800; text-wrap: balance">مشروع تخرّجك وبحثك<br><span style="color: #C8502E">من الفكرة<br class="m-br"> إلى المناقشة</span></h1>
+        <p class="m-dsk" style="margin: 0; font-size: 19px; line-height: 1.85; color: #5A607A; max-width: 580px">مشروعي يديره صالح صفاء، خريج علوم الحاسوب من جامعة بغداد بتقدير امتياز. نبني مشروعك البرمجي وياك خطوة بخطوة، أو نبنيه إلك ونشرحلك كل سطر، ونجهّز وياك البحث والتقرير بمصادر موثّقة لحد يوم المناقشة.</p>
+        <p class="m-mob" style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A607A">بإشراف صالح صفاء، خريج علوم الحاسوب بامتياز. نبنيه وياك أو إلك، ونشرحلك كل سطر قبل المناقشة.</p>
+        <div class="m-hero-btns">
           <a href="order.html" class="m-btn m-btn-or">ابدأ طلبك الآن
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg>
           </a>
-          <a href="#services" class="m-btn m-btn-out">شوف الخدمات</a>
+          <a href="https://wa.me/9647713111325?text=%D9%87%D9%84%D8%A7%D8%8C%20%D8%B9%D9%86%D8%AF%D9%8A%20%D8%B3%D8%A4%D8%A7%D9%84%20%D8%B9%D9%86%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%A7%D9%84%D8%AA%D8%AE%D8%B1%D9%91%D8%AC" target="_blank" rel="noopener" class="m-btn m-btn-out m-wa-btn" id="hero-wa">
+            <img src="assets/founder-avatar.jpg" width="38" height="38" alt="صورة صالح صفاء">
+            <span class="m-wa-txt"><span>اسألنا على واتساب</span><small>صالح صفاء، مؤسس مشروعي</small></span>
+          </a>
         </div>
-        <div style="display: flex; flex-wrap: wrap; gap: 22px; padding-top: 6px; font-size: 14px; color: #5A607A">
-          <span style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8502E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>تواصل مباشر مع المنفّذ</span>
-          <span style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8502E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>تسليم على مراحل</span>
-          <span style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8502E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>شرح كامل قبل المناقشة</span>
-        </div>
+        <ul class="m-promise">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="13" rx="2.5"></rect><path d="M2 10.5h20"></path><path d="M6 15h4"></path></svg><span>الدفع بزين كاش على دفعتين، <b>الثانية بعد ما تشوف مشروعك شغّال</b></span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg><span>شرح كامل للكود قبل المناقشة</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.6Z"></path><path d="M9 10c.5 2 2 3.5 4 4l1.2-1.2 2 1-.5 1.7c-3.6.2-7-3.2-6.8-6.8L10.6 8l1 2Z"></path></svg><span>تواصل مباشر على واتساب</span></li>
+        </ul>
       </div>
 
       <div style="flex: 1 1 380px; min-width: 0; max-width: 460px; margin: 0 auto">
-        <div style="background: #FFFFFF; border-radius: 28px; padding: 24px; border: 1.5px solid #EFE4CF; box-shadow: 0 30px 60px rgba(163,64,42,.12); display: flex; flex-direction: column; gap: 18px">
+        <div style="background: #FFFFFF; border-radius: 28px; padding: 22px 24px 24px; border: 1.5px solid #E0CDAA; box-shadow: 0 30px 60px rgba(163,64,42,.12); display: flex; flex-direction: column; gap: 18px">
+          <span class="ex-lbl"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></svg>مثال: هيج تتابع طلبك</span>
           <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
-            <div style="display: flex; flex-direction: column; gap: 4px">
-              <span style="font-size: 13px; color: #5A607A">طلب رقم M-2041</span>
-              <span class="m-disp" style="font-weight: 700; font-size: 19px">نظام حضور بالبصمة</span>
-            </div>
-            <span class="m-tag" style="font-weight: 700">مشروع + بحث</span>
+            <span class="m-disp" style="font-weight: 700; font-size: 19px; line-height: 1.4">تطبيق حجز مواعيد لعيادة أسنان</span>
+            <span class="m-tag" style="font-weight: 700; flex-shrink: 0">مشروع + بحث</span>
           </div>
           <div style="display: flex; flex-direction: column; gap: 8px">
             <div style="display: flex; justify-content: space-between; font-size: 13px; color: #5A607A"><span>نسبة الإنجاز</span><span class="m-disp" style="font-weight: 800; color: #1E2233">60%</span></div>
             <div style="height: 10px; border-radius: 999px; background: #F3E8D2; overflow: hidden"><div style="width: 60%; height: 100%; border-radius: 999px; background: #C8502E"></div></div>
           </div>
-          <ol class="tk" aria-label="مراحل الطلب">
+          <ol class="tk" aria-label="مراحل الطلب في المثال">
             <li class="tk-done"><span class="tk-dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span class="tk-txt">استلام الطلب وتحليل الفكرة</span></li>
             <li class="tk-done"><span class="tk-dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span class="tk-txt">التصميم وقاعدة البيانات</span></li>
-            <li class="tk-now"><span class="tk-dot"><span></span></span><span class="tk-txt">برمجة المشروع <em>جارٍ الآن</em></span></li>
-            <li><span class="tk-dot"></span><span class="tk-txt">كتابة البحث والتوثيق</span></li>
-            <li><span class="tk-dot"></span><span class="tk-txt">التسليم والتحضير للمناقشة</span></li>
+            <li class="tk-now"><span class="tk-dot"><span></span></span><span class="tk-txt">برمجة التطبيق <em>جارٍ الآن</em></span></li>
+            <li><span class="tk-dot"></span><span class="tk-txt">البحث والتقرير</span></li>
+            <li><span class="tk-dot"></span><span class="tk-txt">شرح الكود والتحضير للمناقشة</span></li>
           </ol>
-          <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 16px; background: #FBF5EA">
-            <span style="width: 42px; height: 42px; border-radius: 13px; background: #FDE7D8; color: #A3402A; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
-            <div style="flex: 1; min-width: 0; font-size: 13px; line-height: 1.6"><b style="font-size: 14px">تحديث من المنفّذ</b><br><span style="color: #5A607A">خلصنا شاشة تسجيل الحضور، نرسلها لك اليوم للمراجعة.</span></div>
+          <div class="wa-chat">
+            <div class="wa-top">
+              <img src="assets/founder-avatar.jpg" width="30" height="30" alt="صورة صالح صفاء">
+              <span>صالح صفاء</span>
+              <span class="wa-app"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.6Z"></path></svg>واتساب</span>
+            </div>
+            <p class="wa-bubble" style="margin: 0">خلصنا شاشة حجز المواعيد، دزيتلك فيديو منها. شوفها وكلي إذا تريد تعديل.<span class="wa-time">4:12 م</span></p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- FOUNDER -->
+  <section id="about" class="m-sec" style="padding: 104px 0">
+    <div class="m-wrap ab">
+      <figure class="ab-photo">
+        <img src="assets/founder.jpg" width="800" height="1000" loading="lazy" alt="صالح صفاء بوشاح تخرّج علوم الحاسوب، دفعة 2026">
+      </figure>
+      <div class="ab-txt">
+        <h2 class="m-disp m-h2" style="margin: 0; font-size: 40px; font-weight: 800; line-height: 1.35">منو وراء مشروعي؟</h2>
+        <div>
+          <p class="m-disp ab-name">صالح صفاء</p>
+          <p class="ab-role">مؤسس مشروعي</p>
+        </div>
+        <ul class="ab-facts">
+          <li><span class="ab-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"></path><path d="M6 12v5c3 2 9 2 12 0v-5"></path></svg></span><span><b>علوم الحاسوب، جامعة بغداد</b><small>دفعة 2026</small></span></li>
+          <li><span class="ab-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 14.2-1.5 7.8 5-3 5 3-1.5-7.8"></path></svg></span><span><b>تخرّجت بتقدير امتياز</b><small>التقدير العام</small></span></li>
+          <li><span class="ab-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg></span><span><b>مشروع تخرّجي تقييمه امتياز</b><small>CodeSync، بيئة برمجة لتدريس الصفوف</small></span></li>
+        </ul>
+        <blockquote class="ab-quote">
+          <p>توني مخلّص مشروع تخرّجي، وأعرف شكد تكون السنة الأخيرة ضغط: مشروع وبحث ولجنة تسأل.</p>
+          <p>سويت مشروعي حتى يكون وياك واحد يبني المشروع وياك أو إلك، ويشرحلك كل سطر.</p>
+          <p>اللي يهمني تدخل المناقشة فاهم شغلك، مو حافظه.</p>
+        </blockquote>
+        <a href="#work" class="m-more">شوف مشروع تخرّجي <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REAL WORK (navy) -->
+  <section id="work" class="m-sec wk" style="padding: 104px 0">
+    <div class="m-wrap" style="display: flex; flex-direction: column; gap: 40px">
+      <div class="wk-head">
+        <span class="wk-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 14.2-1.5 7.8 5-3 5 3-1.5-7.8"></path></svg>مشروع تخرّجي، تقييمه امتياز</span>
+        <h2 class="m-disp m-h2" style="margin: 0; font-size: 40px; font-weight: 800; line-height: 1.35; color: #FBF5EA">CodeSync: صف برمجة كامل داخل المتصفح</h2>
+        <p>هذا مشروع تخرّجي أنا، مو شغل زبون. بيئة برمجة بالمتصفح لتدريس صفوف البرمجة: المدرّس يكتب والكود يوصل لكل طالب بنفس اللحظة، ويكدرون يعدّلون نفس الملف سوا وكل واحد مؤشره باسمه.</p>
+      </div>
+      <div class="wk-grid">
+        <figure>
+          <img src="assets/work/follow.jpg" width="714" height="516" loading="lazy" alt="لقطة من CodeSync: الطالب يتابع محرر المدرّس مباشرة بوضع القراءة فقط">
+          <figcaption><b>وضع المتابعة.</b> محرر المدرّس يوصل لكل طالب مباشرة، للقراءة فقط.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/work/dashboard.jpg" width="708" height="515" loading="lazy" alt="لوحة المدرّس في CodeSync تعرض محرر كل طالب وحالته">
+          <figcaption><b>لوحة المدرّس.</b> يشوف محرر كل طالب وحالته: شغّال، خامل، أو بيه خطأ.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/work/terminal.jpg" width="708" height="517" loading="lazy" alt="محرر CodeSync وتحته تيرمنل يشغّل ملف JavaScript">
+          <figcaption><b>بيئة لكل واحد.</b> كل شخص يبرمج ببيئة سحابية معزولة إله، وبيها تيرمنل حقيقي.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/work/call.jpg" width="724" height="516" loading="lazy" alt="مكالمة ومشاركة شاشة داخل CodeSync جنب محرر الكود">
+          <figcaption><b>الصف كله بمكانه.</b> صوت وفيديو ومشاركة شاشة ودردشة جنب الكود.</figcaption>
+        </figure>
+      </div>
+      <p class="wk-hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg>اسحب حتى تشوف باقي اللقطات</p>
+      <ul class="wk-tech" aria-label="التقنيات المستعملة">
+        <li><span>الواجهة</span><b dir="ltr" style="text-align: right">React + Vite</b></li>
+        <li><span>الاتصال</span><b>اتصال <bdi>socket</bdi> دائم لكل جلسة</b></li>
+        <li><span>الصوت والصورة</span><b>صوت وفيديو ومشاركة شاشة <bdi>peer-to-peer</bdi></b></li>
+        <li><span>التشغيل</span><b>بيئة معزولة لكل مستخدم وتيرمنل مباشر</b></li>
+      </ul>
+    </div>
+  </section>
+
   <!-- SERVICES -->
-  <section id="services" class="m-sec" style="padding: 104px 0; background: #FFFFFF">
-    <div class="m-wrap" style="display: flex; flex-direction: column; gap: 44px">
+  <section id="services" class="m-sec" style="padding: 104px 0 72px">
+    <div class="m-wrap" style="display: flex; flex-direction: column; gap: 36px">
       <div class="m-shead" style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
-        <span style="font-weight: 700; font-size: 14px; color: #A3402A">الخدمات</span>
-        <h2 class="m-disp m-h2" style="margin: 0; font-size: 40px; font-weight: 800; line-height: 1.35">كل اللي تحتاجه للتخرّج، بمكان واحد</h2>
-        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A607A">اختار الخدمة اللي تحتاجها، أو اجمع المشروع والبحث بطلب واحد حتى يكون الشغل متناسق من البداية للنهاية.</p>
+        <h2 class="m-disp m-h2" style="margin: 0; font-size: 40px; font-weight: 800; line-height: 1.35">المشروع، البحث، والمناقشة</h2>
+        <p class="m-lead">اختار اللي تحتاجه، أو اجمع المشروع والبحث بطلب واحد حتى يكون الشغل متناسق من البداية للنهاية.</p>
       </div>
       <div style="display: flex; flex-wrap: wrap; gap: 20px">
-        <article style="flex: 1 1 300px; padding: 30px; border-radius: 24px; background: #FBF5EA; display: flex; flex-direction: column; gap: 16px">
-          <span style="width: 56px; height: 56px; border-radius: 17px; background: #C8502E; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg></span>
+        <article class="sv-card">
+          <span class="sv-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg></span>
           <h3 class="m-disp" style="margin: 0; font-size: 22px; font-weight: 700">مشاريع تخرّج برمجية</h3>
-          <p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A607A">نبني مشروعك كامل — من تحليل المتطلبات إلى نسخة شغّالة تعرضها قدّام اللجنة، مع الكود المصدري.</p>
+          <p>نبنيه وياك خطوة بخطوة، أو نبنيه إلك ونشرحلك كل سطر. من تحليل المتطلبات إلى نسخة شغّالة تعرضها قدّام اللجنة، مع الكود المصدري.</p>
           <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto"><span class="m-tag">مواقع ويب</span><span class="m-tag">تطبيقات موبايل</span><span class="m-tag">ذكاء اصطناعي</span><span class="m-tag">إنترنت الأشياء (IoT)</span></div>
+          <a href="order.html?type=project" class="m-more">اطلب مشروعك <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg></a>
         </article>
-        <article style="flex: 1 1 300px; padding: 30px; border-radius: 24px; background: #FBF5EA; display: flex; flex-direction: column; gap: 16px">
-          <span style="width: 56px; height: 56px; border-radius: 17px; background: #C8502E; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg></span>
+        <article class="sv-card">
+          <span class="sv-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg></span>
           <h3 class="m-disp" style="margin: 0; font-size: 22px; font-weight: 700">بحوث وتقارير</h3>
-          <p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A607A">بحث تخرّج مكتوب بلغة سليمة ومصادر حديثة، منسّق حسب دليل قسمك، وتستلمه Word و PDF.</p>
+          <p>نجهّز وياك البحث والتقرير بمصادر موثّقة ولغة سليمة، منسّق حسب دليل قسمك، وتستلمه Word و PDF.</p>
           <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto"><span class="m-tag">بحث تخرّج</span><span class="m-tag">مراجعة أدبيات</span><span class="m-tag">APA / IEEE</span></div>
+          <a href="order.html?type=research" class="m-more">اطلب البحث <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg></a>
         </article>
-        <article style="flex: 1 1 300px; padding: 30px; border-radius: 24px; background: #FBF5EA; display: flex; flex-direction: column; gap: 16px">
-          <span style="width: 56px; height: 56px; border-radius: 17px; background: #C8502E; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path><path d="m7 12 3-3 3 2 4-4"></path></svg></span>
+        <article class="sv-card">
+          <span class="sv-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path><path d="m7 12 3-3 3 2 4-4"></path></svg></span>
           <h3 class="m-disp" style="margin: 0; font-size: 22px; font-weight: 700">العرض والتحضير للمناقشة</h3>
-          <p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A607A">سلايدات مرتّبة تحكي قصة مشروعك، وجلسة نمرّ بيها على الأسئلة المتوقعة من اللجنة.</p>
+          <p>سلايدات مرتّبة تحكي قصة مشروعك، وجلسة نمرّ بيها على الأسئلة المتوقعة من اللجنة.</p>
           <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto"><span class="m-tag">عرض تقديمي</span><span class="m-tag">تدريب على الأسئلة</span></div>
+          <a href="order.html?defense=1" class="m-more">أضفها لطلبك <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg></a>
         </article>
       </div>
+
+      <div class="md">
+        <h3 class="m-disp" style="margin: 0; font-size: 22px; font-weight: 700; line-height: 1.45">المشروع البرمجي بطريقتين، وأنت تختار</h3>
+        <div class="md-row">
+          <div class="md-opt">
+            <b>نبنيه وياك خطوة بخطوة</b>
+            <p>تشارك بكل مرحلة، ونفهّمك شنو نسوي وليش، فتوصل للمناقشة وأنت عايش المشروع من أوله.</p>
+          </div>
+          <div class="md-opt">
+            <b>نبنيه إلك ونشرحلك كل سطر</b>
+            <p>نبني المشروع كامل، وقبل المناقشة نمرّ وياك على الكود سطر سطر، شنو يسوي وليش انكتب هيج.</p>
+          </div>
+        </div>
+        <p class="md-note"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8502E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>وبالطريقتين، كل طلب بيه شرح للكود وتحضير للمناقشة.</p>
+      </div>
+
+      <p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A607A">نشتغل وية أغلب أقسام الحاسوب والهندسة: علوم وهندسة الحاسوب، هندسة البرمجيات، نظم المعلومات، الاتصالات، الذكاء الاصطناعي، الأمن السيبراني، والإلكترونيك والسيطرة.</p>
     </div>
   </section>
 
   <!-- HOW -->
-  <section id="how" class="m-sec" style="padding: 104px 0">
-    <div class="m-wrap" style="display: flex; flex-direction: column; gap: 44px">
-      <div class="m-shead" style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
-        <span style="font-weight: 700; font-size: 14px; color: #A3402A">كيف نشتغل</span>
+  <section id="how" class="m-sec" style="padding: 72px 0 104px">
+    <div class="m-wrap" style="display: flex; flex-wrap: wrap; gap: 36px 56px; align-items: flex-start">
+      <div style="flex: 1 1 400px; display: flex; flex-direction: column; gap: 12px">
         <h2 class="m-disp m-h2" style="margin: 0; font-size: 40px; font-weight: 800; line-height: 1.35">أربع خطوات، وأنت تعرف وين وصلنا</h2>
+        <p class="m-lead">وكل مرحلة توصلك على واتساب، بنفس الرقم اللي تحجي وياه.</p>
       </div>
-      <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 20px">
-        <li class="m-card" style="flex: 1 1 240px; padding: 26px; display: flex; flex-direction: column; gap: 14px">
-          <span class="m-disp" style="width: 48px; height: 48px; border-radius: 15px; background: #C8502E; color: #FFFFFF; font-weight: 800; font-size: 20px; display: flex; align-items: center; justify-content: center">1</span>
-          <h3 class="m-disp" style="margin: 0; font-size: 19px; font-weight: 700">ترسل فكرتك</h3>
-          <p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A607A">تختار نوع الطلب وتكتب الفكرة أو عنوان البحث وموعد المناقشة.</p>
-        </li>
-        <li class="m-card" style="flex: 1 1 240px; padding: 26px; display: flex; flex-direction: column; gap: 14px">
-          <span class="m-disp" style="width: 48px; height: 48px; border-radius: 15px; background: #C8502E; color: #FFFFFF; font-weight: 800; font-size: 20px; display: flex; align-items: center; justify-content: center">2</span>
-          <h3 class="m-disp" style="margin: 0; font-size: 19px; font-weight: 700">نتفق على السعر والمدة</h3>
-          <p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A607A">نراجع المتطلبات ونرسلك عرض واضح قبل أي التزام.</p>
-        </li>
-        <li class="m-card" style="flex: 1 1 240px; padding: 26px; display: flex; flex-direction: column; gap: 14px">
-          <span class="m-disp" style="width: 48px; height: 48px; border-radius: 15px; background: #C8502E; color: #FFFFFF; font-weight: 800; font-size: 20px; display: flex; align-items: center; justify-content: center">3</span>
-          <h3 class="m-disp" style="margin: 0; font-size: 19px; font-weight: 700">ننفّذ على مراحل</h3>
-          <p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A607A">توصلك كل مرحلة للمراجعة، وتطلب تعديلاتك أول بأول.</p>
-        </li>
-        <li class="m-card" style="flex: 1 1 240px; padding: 26px; display: flex; flex-direction: column; gap: 14px">
-          <span class="m-disp" style="width: 48px; height: 48px; border-radius: 15px; background: #C8502E; color: #FFFFFF; font-weight: 800; font-size: 20px; display: flex; align-items: center; justify-content: center">4</span>
-          <h3 class="m-disp" style="margin: 0; font-size: 19px; font-weight: 700">تستلم وتتجهّز</h3>
-          <p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A607A">نسلّمك الملفات كاملة ونشرح لك كل جزء قبل يوم المناقشة.</p>
-        </li>
+      <ol class="tk tk-lg" style="flex: 999 1 520px; min-width: 0">
+        <li><span class="tk-dot">1</span><div><h3>ترسل فكرتك</h3><p>تعبّي الطلب بثلاث خطوات أو تسألنا على واتساب، وتكتب الفكرة أو عنوان البحث وموعد المناقشة.</p></div></li>
+        <li><span class="tk-dot">2</span><div><h3>نراجعها ونرسلك عرض السعر</h3><p>كل مشروع يتسعّر لحاله بعد المراجعة. نتفق على المدة وعلى الطريقة: وياك خطوة بخطوة، أو إلك ونشرحلك كل سطر.</p></div></li>
+        <li><span class="tk-dot">3</span><div><h3>نبدي على مراحل</h3><p>تدفع الدفعة الأولى بزين كاش لما نبدي بالشغل، وتوصلك كل مرحلة للمراجعة وتطلب تعديلاتك أول بأول.</p></div></li>
+        <li><span class="tk-dot">4</span><div><h3>تشوفه شغّال وتتجهّز</h3><p>تشوف المشروع شغّال قدامك وبعدها تدفع الدفعة الثانية، ونشرحلك الكود كله قبل يوم المناقشة.</p></div></li>
       </ol>
     </div>
   </section>
 
-  <!-- FIELDS -->
-  <section id="fields" class="m-sec" style="padding: 96px 0; background: #FFFFFF">
-    <div class="m-wrap" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between">
-      <div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 12px">
-        <span style="font-weight: 700; font-size: 14px; color: #A3402A">التخصصات</span>
-        <h2 class="m-disp m-h2" style="margin: 0; font-size: 40px; font-weight: 800; line-height: 1.35">نشتغل وية أغلب أقسام الحاسوب والهندسة</h2>
-      </div>
-      <div style="flex: 999 1 520px; display: flex; flex-wrap: wrap; gap: 10px">
-        <span style="height: 48px; padding: 0 20px; border-radius: 999px; background: #FBF5EA; border: 1.5px solid #EFE4CF; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center">هندسة الحاسوب</span>
-        <span style="height: 48px; padding: 0 20px; border-radius: 999px; background: #FBF5EA; border: 1.5px solid #EFE4CF; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center">علوم الحاسوب</span>
-        <span style="height: 48px; padding: 0 20px; border-radius: 999px; background: #FBF5EA; border: 1.5px solid #EFE4CF; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center">هندسة البرمجيات</span>
-        <span style="height: 48px; padding: 0 20px; border-radius: 999px; background: #FBF5EA; border: 1.5px solid #EFE4CF; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center">نظم المعلومات</span>
-        <span style="height: 48px; padding: 0 20px; border-radius: 999px; background: #FBF5EA; border: 1.5px solid #EFE4CF; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center">الاتصالات</span>
-        <span style="height: 48px; padding: 0 20px; border-radius: 999px; background: #FBF5EA; border: 1.5px solid #EFE4CF; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center">الذكاء الاصطناعي</span>
-        <span style="height: 48px; padding: 0 20px; border-radius: 999px; background: #FBF5EA; border: 1.5px solid #EFE4CF; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center">الأمن السيبراني</span>
-        <span style="height: 48px; padding: 0 20px; border-radius: 999px; background: #FBF5EA; border: 1.5px solid #EFE4CF; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center">الإلكترونيك والسيطرة</span>
-      </div>
-    </div>
-  </section>
-
   <!-- FAQ -->
-  <section id="faq" class="m-sec" style="padding: 104px 0 64px">
-    <div class="m-wrap" style="display: flex; flex-wrap: wrap; gap: 40px">
+  <section id="faq" class="m-sec m-faqs" style="padding: 0 0 64px">
+    <div class="m-wrap">
+    <div class="m-faqs-in" style="display: flex; flex-wrap: wrap; gap: 32px 56px; border-top: 1.5px solid #E0CDAA; padding-top: 72px">
       <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 12px">
-        <span style="font-weight: 700; font-size: 14px; color: #A3402A">الأسئلة الشائعة</span>
         <h2 class="m-disp m-h2" style="margin: 0; font-size: 40px; font-weight: 800; line-height: 1.35">قبل ما تطلب</h2>
+        <p class="m-lead">عندك سؤال ثاني؟ <a href="https://wa.me/9647713111325" target="_blank" rel="noopener" style="color: #A3402A; font-weight: 700; text-decoration: underline; text-underline-offset: 4px">اسألنا على واتساب</a></p>
       </div>
-      <div style="flex: 999 1 560px; display: flex; flex-direction: column; gap: 12px">
+      <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+        <details class="m-faq m-card"><summary>شلون يتحدد السعر؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">كل مشروع يتسعّر لحاله. بعد ما ترسل الطلب نراجع الفكرة والمتطلبات، ونرسلك عرض سعر على واتساب قبل أي التزام. والدفع بزين كاش على دفعتين.</p></details>
+        <details class="m-faq m-card"><summary>شلون يكون الدفع؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">بزين كاش، وعلى دفعتين: الأولى لما نبدي بالشغل، والثانية بعد ما تشوف مشروعك شغّال قدامك.</p></details>
+        <details class="m-faq m-card"><summary>شنو الفرق بين الطريقتين؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">بالأولى نبني المشروع وياك خطوة بخطوة، وأنت تشارك بكل مرحلة. وبالثانية نبنيه إلك كامل، وبعدها نشرحلك كل سطر قبل المناقشة. أنت تختار اللي يناسب وقتك، وبالحالتين أكو شرح للكود وتحضير للمناقشة.</p></details>
+        <details class="m-faq m-card"><summary>راح أفهم الكود مالي بالمناقشة؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">هذا الهدف. كل طلب بيه شرح كامل للكود وتحضير للمناقشة: نمرّ وياك على كل جزء، شنو يسوي وليش انكتب هيج، حتى تكدر تشرحه للجنة بكلامك.</p></details>
         <details class="m-faq m-card"><summary>كم يستغرق تنفيذ المشروع؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">تتحدد المدة حسب حجم الفكرة، ونتفق عليها وياك قبل البدء ونسلّمك على مراحل.</p></details>
         <details class="m-faq m-card"><summary>هل أستلم الكود المصدري؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">نعم، تستلم الكود كامل مع شرح طريقة التشغيل ونسخة جاهزة للعرض.</p></details>
-        <details class="m-faq m-card"><summary>شلون يتحدد السعر؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">بعد ما ترسل الطلب نراجع الفكرة والمتطلبات، ونرسلك عرض سعر واضح قبل أي التزام.</p></details>
         <details class="m-faq m-card"><summary>تساعدوني بيوم المناقشة؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">نجهّز العرض التقديمي ونمرّ وياك على الأسئلة المتوقعة من اللجنة لحد ما تكون واثق من كل جزء.</p></details>
       </div>
+    </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section style="padding: 0 0 104px">
+  <section class="m-cta" style="padding: 0 0 104px">
     <div class="m-wrap">
-      <div style="border-radius: 32px; background: #C8502E; color: #FFFFFF; padding: 52px 44px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between">
+      <div class="m-cta-box" style="border-radius: 32px; background: #C8502E; color: #FFFFFF; padding: 52px 44px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between">
         <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 10px">
           <h2 class="m-disp m-h2" style="margin: 0; font-size: 38px; font-weight: 800; line-height: 1.35">موعد مناقشتك يقترب؟</h2>
           <p style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.7">ابدأ اليوم وخلّي وقتك للمراجعة، مو للركض.</p>
@@ -335,75 +468,52 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
   </section>
 
   <!-- FOOTER (navy) -->
-  <footer style="background-color: #14204A; background-image: repeating-linear-gradient(60deg, rgba(255,255,255,.035) 0 1px, transparent 1px 24px), repeating-linear-gradient(-60deg, rgba(255,255,255,.035) 0 1px, transparent 1px 24px); color: #FBF5EA; padding-top: 72px">
-    <div class="m-wrap" style="display: flex; flex-direction: column; gap: 52px">
-      <div style="display: flex; flex-wrap: wrap; gap: 44px 56px">
+  <footer id="contact" style="background-color: #14204A; background-image: repeating-linear-gradient(60deg, rgba(255,255,255,.035) 0 1px, transparent 1px 24px), repeating-linear-gradient(-60deg, rgba(255,255,255,.035) 0 1px, transparent 1px 24px); color: #FBF5EA; padding-top: 64px">
+    <div class="m-wrap" style="display: flex; flex-direction: column; gap: 44px">
+      <div class="f-cols" style="display: flex; flex-wrap: wrap; gap: 44px 56px">
         <div style="flex: 1.7 1 320px; display: flex; flex-direction: column; gap: 20px; max-width: 420px">
           <a href="#top" style="display: flex; align-items: center; gap: 12px; color: #FBF5EA">
             <svg viewBox="0 0 120 120" width="50" height="50" aria-hidden="true"><rect width="120" height="120" rx="30" fill="#C8502E"/><path d="M28 64 L46 82 L77 51" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(82 41) rotate(22) scale(1.5)"><path d="M-11 2.5V9.5Q0 15 11 9.5V2.5L0 7Z" fill="#14204A"/><path d="M-18 0L0 -7.5L18 0L0 7.5Z" fill="#14204A"/></g><path d="M102.41 50.54V69.29" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round"/><rect x="99.81" y="68.29" width="5.2" height="7.5" rx="1.6" fill="#FFFFFF"/></svg>
-            <span style="display: flex; flex-direction: column"><span class="m-disp" style="font-weight: 800; font-size: 24px">مشروعي<span style="color: #C8502E">.</span></span><span style="font-size: 13px; color: rgba(251,245,234,.7)">من الفكرة إلى المناقشة</span></span>
+            <span style="display: flex; flex-direction: column"><span class="m-disp" style="font-weight: 800; font-size: 24px">مشروعي<span style="color: #C8502E">.</span></span><span style="font-size: 13px; color: rgba(251,245,234,.72)">من الفكرة إلى المناقشة</span></span>
           </a>
-          <p style="margin: 0; font-size: 15px; line-height: 1.9; color: rgba(251,245,234,.72)">منصة تساعد طلاب المرحلة الأخيرة ينجزون مشروع التخرّج والبحث بخطوات واضحة، من أول فكرة لحد يوم المناقشة.</p>
-          <div style="display: flex; gap: 10px">
-            <a href="https://wa.me/9647713111325" target="_blank" rel="noopener" class="m-soc" aria-label="واتساب"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.6Z"></path><path d="M9 10c.5 2 2 3.5 4 4l1.2-1.2 2 1-.5 1.7c-3.6.2-7-3.2-6.8-6.8L10.6 8l1 2Z"></path></svg></a>
-          </div>
+          <p class="m-dsk" style="margin: 0; font-size: 15px; line-height: 1.9; color: rgba(251,245,234,.74)">مشروعي يديره صالح صفاء، خريج علوم الحاسوب من جامعة بغداد. نبني وياك مشروع تخرّجك وبحثك، ونشرحلك كل سطر قبل المناقشة.</p>
         </div>
 
-        <nav aria-label="روابط سريعة" style="flex: 1 1 150px; display: flex; flex-direction: column; gap: 14px">
+        <nav class="m-dsk" aria-label="روابط سريعة" style="flex: 1 1 150px; display: flex; flex-direction: column; gap: 14px">
           <span class="m-fhead">روابط سريعة</span>
-          <a href="#top" class="m-flink">الرئيسية</a>
+          <a href="#about" class="m-flink">المؤسس</a>
+          <a href="#work" class="m-flink">شغل حقيقي</a>
           <a href="#services" class="m-flink">الخدمات</a>
           <a href="#how" class="m-flink">كيف نشتغل</a>
-          <a href="#fields" class="m-flink">التخصصات</a>
           <a href="#faq" class="m-flink">الأسئلة الشائعة</a>
         </nav>
 
-        <div style="flex: 1 1 180px; display: flex; flex-direction: column; gap: 14px">
-          <span class="m-fhead">خدماتنا</span>
-          <a href="#services" class="m-flink">مشاريع تخرّج برمجية</a>
-          <a href="#services" class="m-flink">بحوث وتقارير</a>
-          <a href="#services" class="m-flink">العرض والتحضير للمناقشة</a>
-          <a href="order.html" class="m-flink">مشروع + بحث بطلب واحد</a>
-        </div>
-
-        <div style="flex: 1.3 1 240px; display: flex; flex-direction: column; gap: 16px">
-          <span class="m-fhead">تواصل ويانا</span>
-          <a href="https://wa.me/9647713111325" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 12px; padding: 14px; border-radius: 16px; background: rgba(251,245,234,.06); border: 1px solid rgba(251,245,234,.12); color: #FBF5EA">
-            <span style="width: 42px; height: 42px; border-radius: 12px; background: #C8502E; color: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.6Z"></path><path d="M9 10c.5 2 2 3.5 4 4l1.2-1.2 2 1-.5 1.7c-3.6.2-7-3.2-6.8-6.8L10.6 8l1 2Z"></path></svg></span>
-            <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; color: rgba(251,245,234,.65)">واتساب</span><b dir="ltr" style="font-size: 16px; letter-spacing: .5px; text-align: right">0771 311 1325</b></span>
+        <div style="flex: 1.3 1 260px; display: flex; flex-direction: column; gap: 12px">
+          <span class="m-fhead m-dsk">تواصل ويانا</span>
+          <a href="https://wa.me/9647713111325" target="_blank" rel="noopener" class="f-card">
+            <span class="f-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.6Z"></path><path d="M9 10c.5 2 2 3.5 4 4l1.2-1.2 2 1-.5 1.7c-3.6.2-7-3.2-6.8-6.8L10.6 8l1 2Z"></path></svg></span>
+            <span><small>واتساب</small><b dir="ltr" style="text-align: right">0771 311 1325</b></span>
           </a>
-          <a href="order.html" class="m-btn m-btn-or" style="height: 52px; font-size: 18px; box-shadow: none">اطلب مشروعك</a>
+          <a href="https://www.instagram.com/mashru.3i/" target="_blank" rel="noopener" class="f-card">
+            <span class="f-ic" style="background: rgba(251,245,234,.12)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></span>
+            <span><small>إنستغرام</small><b dir="ltr" style="text-align: right">@mashru.3i</b></span>
+          </a>
         </div>
       </div>
 
-      <div style="border-top: 1px solid rgba(251,245,234,.12); padding: 22px 0 26px; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; font-size: 13px; color: rgba(251,245,234,.6)">
+      <div style="border-top: 1px solid rgba(251,245,234,.14); padding: 20px 0 26px; font-size: 13px; color: rgba(251,245,234,.66)">
         <span>© 2026 مشروعي. جميع الحقوق محفوظة.</span>
-        <span>صُنع لطلاب المرحلة الأخيرة في العراق</span>
       </div>
     </div>
   </footer>
+
+  <!-- floating WhatsApp (mobile) -->
+  <a href="https://wa.me/9647713111325?text=%D9%87%D9%84%D8%A7%D8%8C%20%D8%B9%D9%86%D8%AF%D9%8A%20%D8%B3%D8%A4%D8%A7%D9%84%20%D8%B9%D9%86%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%A7%D9%84%D8%AA%D8%AE%D8%B1%D9%91%D8%AC" target="_blank" rel="noopener" class="m-fab m-fab-off" id="fab" aria-label="اسألنا على واتساب">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.6Z"></path><path d="M9 10c.5 2 2 3.5 4 4l1.2-1.2 2 1-.5 1.7c-3.6.2-7-3.2-6.8-6.8L10.6 8l1 2Z"></path></svg>
+  </a>
 </div>
 <script>
 (function () {
-  var loader = document.getElementById('loader');
-  var conf = document.getElementById('ld-conf');
-  var colors = ['#C8502E', '#E3A531', '#F2B79F', '#14204A', '#A3402A'];
-  var n = 40;
-  for (var i = 0; i < n; i++) {
-    var a = (i * (360 / n) + (i % 3) * 9) * Math.PI / 180;
-    var d = 160 + (i * 37) % 150;
-    var s = document.createElement('span');
-    s.className = 'ld-piece';
-    s.style.cssText = 'width:' + (i % 3 === 0 ? 10 : 7) + 'px;height:' + (i % 2 ? 18 : 9) + 'px;background:' + colors[i % colors.length] +
-      ';border-radius:' + (i % 4 === 0 ? '50%' : '2px') + ';--x:' + Math.round(Math.cos(a) * d * 1.35) + 'px;--y:' + Math.round(Math.sin(a) * d * 0.75 - 80) +
-      'px;--r:' + (((i * 47) % 360) - 180) + 'deg;animation-delay:' + (0.85 + (i % 6) * 0.05).toFixed(2) + 's';
-    conf.appendChild(s);
-  }
-  function hideLoader() { if (loader && loader.parentNode) loader.parentNode.removeChild(loader); }
-  var t = setTimeout(hideLoader, 3000);
-  document.getElementById('ld-skip').addEventListener('click', function () { clearTimeout(t); hideLoader(); });
-  if (document.documentElement.classList.contains('no-intro')) { clearTimeout(t); hideLoader(); }
-
   var nav = document.getElementById('nav');
   function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 8); }
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -419,11 +529,21 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
   function closeMenu() { mnav.setAttribute('hidden', ''); burger.setAttribute('aria-expanded', 'false'); }
   mnav.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
   document.addEventListener('keydown', function (e) {
-    if (e.key !== 'Escape') return;
-    if (!mnav.hasAttribute('hidden')) { closeMenu(); burger.focus(); }
-    if (document.getElementById('loader')) { clearTimeout(t); hideLoader(); }
+    if (e.key === 'Escape' && !mnav.hasAttribute('hidden')) { closeMenu(); burger.focus(); }
   });
   document.addEventListener('click', function (e) { if (!nav.contains(e.target) && !mnav.hasAttribute('hidden')) closeMenu(); });
+
+  // Floating WhatsApp button: hidden while the hero WhatsApp button or the
+  // footer contact cards are on screen, so it never doubles up or covers them.
+  var fab = document.getElementById('fab');
+  if (!('IntersectionObserver' in window)) { fab.classList.remove('m-fab-off'); return; }
+  var vis = {};
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { vis[en.target.id] = en.isIntersecting; });
+    fab.classList.toggle('m-fab-off', !!(vis['hero-wa'] || vis.contact));
+  });
+  io.observe(document.getElementById('hero-wa'));
+  io.observe(document.getElementById('contact'));
 })();
 </script>
 </body>

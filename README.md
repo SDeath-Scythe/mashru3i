@@ -24,7 +24,7 @@ Each order is sent two ways at once: it opens WhatsApp with the message ready, *
 
 ## Settings
 
-- **WhatsApp number that receives orders:** `WA_TO` at the top of `assets/order.js` (currently `9647713111325` = 0771 311 1325, international format without `+`).
+- **WhatsApp number that receives orders:** `WA_TO` at the top of `assets/order.js` (currently `9647738293881` = 0773 829 3881, international format without `+`).
 - **Brand colours:** orange `#C8502E`, navy `#14204A`, cream `#FBF5EA`, white.
 - **Fonts:** Alexandria (headings) and IBM Plex Sans Arabic (body), loaded from Google Fonts.
 
@@ -38,4 +38,4 @@ python3 -m http.server 8000
 
 ## Deploy
 
-Live on Netlify: https://mashroui.netlify.app — no build step, the folder is published as-is. The order backup uses Netlify Forms, so it only works when hosted on Netlify.
+Live on Netlify: https://mashru3i.netlify.app — no build step, the folder is published as-is. The order backup uses Netlify Forms, so it only works when hosted on Netlify.

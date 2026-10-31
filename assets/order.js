@@ -2,13 +2,21 @@
   'use strict';
 
   // Number that receives the orders on WhatsApp (international format, no +)
-  var WA_TO = '9647713111325';
+  var WA_TO = '9647738293881';
 
   var TITLES = { project: 'مشروع تخرّج', research: 'بحث تخرّج', both: 'مشروع + بحث' };
   var DEPTS = ['هندسة الحاسوب', 'علوم الحاسوب', 'هندسة البرمجيات', 'نظم المعلومات', 'هندسة الاتصالات',
     'الذكاء الاصطناعي', 'الأمن السيبراني', 'إنترنت الأشياء (IoT)', 'الإلكترونيك والسيطرة', 'قسم آخر'];
 
-  var state = { step: 1, type: 'both', defense: true, dept: '', tried: false };
+  // Nothing is pre-selected, unless the visitor came from a specific service
+  // link on the home page (order.html?type=project|research|both, ?defense=1).
+  // Defence preparation is an optional add-on with its own price.
+  var state = { step: 1, type: '', defense: false, dept: '', tried: false };
+  try {
+    var q = new URLSearchParams(window.location.search);
+    if (TITLES.hasOwnProperty(q.get('type'))) state.type = q.get('type');
+    if (q.get('defense') === '1') state.defense = true;
+  } catch (err) { /* very old browser: start with nothing selected */ }
 
   var $ = function (id) { return document.getElementById(id); };
   var panels = document.querySelectorAll('.o-panel');
@@ -28,6 +36,7 @@
   }
   function checks() {
     return {
+      type: TITLES.hasOwnProperty(state.type),
       name: $('o-name').value.trim().length >= 3,
       phone: /^7\d{9}$/.test(phoneDigits()),
       uni: $('o-uni').value.trim().length >= 2,
@@ -38,13 +47,13 @@
   function waLink() {
     var R = '‏', L = '‎';
     var d = phoneDigits();
-    var date = $('o-date').value, dateFmt = '—';
+    var date = $('o-date').value, dateFmt = 'غير محدد';
     if (date) { var p = date.split('-'); if (p.length === 3) dateFmt = L + p[2] + '/' + p[1] + '/' + p[0] + L; }
     var lines = [
-      '*طلب جديد — مشروعي*',
+      '*طلب جديد من موقع مشروعي*',
       '',
-      '*نوع الطلب:* ' + TITLES[state.type],
-      '*التحضير للمناقشة:* ' + (state.defense ? 'نعم' : 'لا'),
+      '*نوع الطلب:* ' + (TITLES[state.type] || 'غير محدد'),
+      '*إضافة التحضير للمناقشة:* ' + (state.defense ? 'نعم' : 'لا'),
       '*الاسم:* ' + $('o-name').value.trim(),
       '*رقم الواتساب:* ' + L + '0' + d.slice(0, 3) + ' ' + d.slice(3, 6) + ' ' + d.slice(6) + L,
       '*الجامعة:* ' + $('o-uni').value.trim(),
@@ -52,14 +61,21 @@
       '*موعد المناقشة:* ' + dateFmt,
       '',
       '*' + (state.type === 'research' ? 'عنوان البحث' : 'فكرة المشروع') + ':*',
-      $('o-idea').value.trim() || 'نتفق عليها بالمحادثة'
+      $('o-idea').value.trim() || (state.type === 'research' ? 'نتفق عليه بالمحادثة' : 'نتفق عليها بالمحادثة')
     ].map(function (l) { return l ? R + l : l; });
     return 'https://wa.me/' + WA_TO + '?text=' + encodeURIComponent(lines.join('\n'));
   }
 
-  function setErr(field, bad, box) {
+  // Shows or hides a field's error. The error spans are role="alert", so they
+  // are announced when they appear; the control only points at its error
+  // while it is shown, so screen readers don't read a hidden message.
+  function setErr(field, bad, box, ctrl) {
     $('err-' + field).hidden = !bad;
     if (box) box.classList.toggle('o-bad', bad);
+    ctrl = ctrl || box;
+    if (!ctrl) return;
+    if (bad) { ctrl.setAttribute('aria-describedby', 'err-' + field); ctrl.setAttribute('aria-invalid', 'true'); }
+    else { ctrl.removeAttribute('aria-describedby'); ctrl.removeAttribute('aria-invalid'); }
   }
 
   function render() {
@@ -80,8 +96,9 @@
     $('defense').classList.toggle('on', state.defense);
     $('defense').setAttribute('aria-checked', state.defense ? 'true' : 'false');
 
+    setErr('type', show && !c.type, null, $('types'));
     setErr('name', show && !c.name, $('o-name'));
-    setErr('phone', show && !c.phone, $('tel'));
+    setErr('phone', show && !c.phone, $('tel'), $('o-phone'));
     $('hint-phone').hidden = show && !c.phone;
     setErr('uni', show && !c.uni, $('o-uni'));
     setErr('dept', show && !c.dept, $('dept-btn'));
@@ -112,7 +129,8 @@
   document.querySelectorAll('[data-next]').forEach(function (b) {
     b.addEventListener('click', function () {
       var c = checks();
-      if (state.step === 2 && !(c.name && c.phone)) { state.tried = true; render(); return; }
+      if (state.step === 1 && !c.type) { state.tried = true; render(); document.querySelector('#types .o-opt').focus(); return; }
+      if (state.step === 2 && !(c.name && c.phone)) { state.tried = true; render(); (c.name ? $('o-phone') : $('o-name')).focus(); return; }
       go(state.step + 1);
     });
   });
@@ -129,15 +147,15 @@
     var d = phoneDigits();
     var data = {
       'form-name': 'order',
-      'subject': 'طلب جديد — مشروعي — ' + $('o-name').value.trim(),
+      'subject': 'طلب جديد من مشروعي: ' + $('o-name').value.trim(),
       'name': $('o-name').value.trim(),
       'phone': '0' + d,
-      'type': TITLES[state.type],
+      'type': TITLES[state.type] || 'غير محدد',
       'defense': state.defense ? 'نعم' : 'لا',
       'university': $('o-uni').value.trim(),
       'department': state.dept,
-      'defense_date': $('o-date').value || '—',
-      'idea': $('o-idea').value.trim() || '—',
+      'defense_date': $('o-date').value || 'غير محدد',
+      'idea': $('o-idea').value.trim() || 'غير محدد',
       'bot-field': ''
     };
     var body = new URLSearchParams(data).toString();
@@ -156,7 +174,8 @@
   // send
   $('send').addEventListener('click', function (e) {
     var c = checks();
-    if (!(c.uni && c.dept)) { e.preventDefault(); state.tried = true; render(); return; }
+    if (!c.type) { e.preventDefault(); go(1); state.tried = true; render(); document.querySelector('#types .o-opt').focus(); return; }
+    if (!(c.uni && c.dept)) { e.preventDefault(); state.tried = true; render(); (c.uni ? $('dept-btn') : $('o-uni')).focus(); return; }
     $('send').href = waLink();
     saveOrder();
     setTimeout(function () { go(4); }, 50);

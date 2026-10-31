@@ -2,7 +2,7 @@
   'use strict';
 
   // Number that receives the orders on WhatsApp (international format, no +)
-  var WA_TO = '9647713111325';
+  var WA_TO = '9647738293881';
 
   var TITLES = { project: 'مشروع تخرّج', research: 'بحث تخرّج', both: 'مشروع + بحث' };
   var DEPTS = ['هندسة الحاسوب', 'علوم الحاسوب', 'هندسة البرمجيات', 'نظم المعلومات', 'هندسة الاتصالات',

@@ -9,12 +9,12 @@
     'الذكاء الاصطناعي', 'الأمن السيبراني', 'إنترنت الأشياء (IoT)', 'الإلكترونيك والسيطرة', 'قسم آخر'];
 
   // Nothing is pre-selected, unless the visitor came from a specific service
-  // link on the home page (order.html?type=project|research|both, ?defense=1).
-  var state = { step: 1, type: '', defense: false, dept: '', tried: false };
+  // link on the home page (order.html?type=project|research|both).
+  // Defence preparation is part of every order, so there is no option for it.
+  var state = { step: 1, type: '', dept: '', tried: false };
   try {
     var q = new URLSearchParams(window.location.search);
     if (TITLES.hasOwnProperty(q.get('type'))) state.type = q.get('type');
-    if (q.get('defense') === '1') state.defense = true;
   } catch (err) { /* very old browser: start with nothing selected */ }
 
   var $ = function (id) { return document.getElementById(id); };
@@ -52,7 +52,7 @@
       '*طلب جديد من موقع مشروعي*',
       '',
       '*نوع الطلب:* ' + (TITLES[state.type] || 'غير محدد'),
-      '*التحضير للمناقشة:* ' + (state.defense ? 'نعم' : 'لا'),
+      '*التحضير للمناقشة:* مشمول',
       '*الاسم:* ' + $('o-name').value.trim(),
       '*رقم الواتساب:* ' + L + '0' + d.slice(0, 3) + ' ' + d.slice(3, 6) + ' ' + d.slice(6) + L,
       '*الجامعة:* ' + $('o-uni').value.trim(),
@@ -60,14 +60,21 @@
       '*موعد المناقشة:* ' + dateFmt,
       '',
       '*' + (state.type === 'research' ? 'عنوان البحث' : 'فكرة المشروع') + ':*',
-      $('o-idea').value.trim() || 'نتفق عليها بالمحادثة'
+      $('o-idea').value.trim() || (state.type === 'research' ? 'نتفق عليه بالمحادثة' : 'نتفق عليها بالمحادثة')
     ].map(function (l) { return l ? R + l : l; });
     return 'https://wa.me/' + WA_TO + '?text=' + encodeURIComponent(lines.join('\n'));
   }
 
-  function setErr(field, bad, box) {
+  // Shows or hides a field's error. The error spans are role="alert", so they
+  // are announced when they appear; the control only points at its error
+  // while it is shown, so screen readers don't read a hidden message.
+  function setErr(field, bad, box, ctrl) {
     $('err-' + field).hidden = !bad;
     if (box) box.classList.toggle('o-bad', bad);
+    ctrl = ctrl || box;
+    if (!ctrl) return;
+    if (bad) { ctrl.setAttribute('aria-describedby', 'err-' + field); ctrl.setAttribute('aria-invalid', 'true'); }
+    else { ctrl.removeAttribute('aria-describedby'); ctrl.removeAttribute('aria-invalid'); }
   }
 
   function render() {
@@ -85,12 +92,10 @@
       b.classList.toggle('on', on);
       b.setAttribute('aria-checked', on ? 'true' : 'false');
     });
-    $('defense').classList.toggle('on', state.defense);
-    $('defense').setAttribute('aria-checked', state.defense ? 'true' : 'false');
 
-    setErr('type', show && !c.type);
+    setErr('type', show && !c.type, null, $('types'));
     setErr('name', show && !c.name, $('o-name'));
-    setErr('phone', show && !c.phone, $('tel'));
+    setErr('phone', show && !c.phone, $('tel'), $('o-phone'));
     $('hint-phone').hidden = show && !c.phone;
     setErr('uni', show && !c.uni, $('o-uni'));
     setErr('dept', show && !c.dept, $('dept-btn'));
@@ -115,14 +120,13 @@
   document.querySelectorAll('#types .o-opt').forEach(function (b) {
     b.addEventListener('click', function () { state.type = b.dataset.type; render(); });
   });
-  $('defense').addEventListener('click', function () { state.defense = !state.defense; render(); });
 
   // navigation
   document.querySelectorAll('[data-next]').forEach(function (b) {
     b.addEventListener('click', function () {
       var c = checks();
-      if (state.step === 1 && !c.type) { state.tried = true; render(); return; }
-      if (state.step === 2 && !(c.name && c.phone)) { state.tried = true; render(); return; }
+      if (state.step === 1 && !c.type) { state.tried = true; render(); document.querySelector('#types .o-opt').focus(); return; }
+      if (state.step === 2 && !(c.name && c.phone)) { state.tried = true; render(); (c.name ? $('o-phone') : $('o-name')).focus(); return; }
       go(state.step + 1);
     });
   });
@@ -143,11 +147,11 @@
       'name': $('o-name').value.trim(),
       'phone': '0' + d,
       'type': TITLES[state.type] || 'غير محدد',
-      'defense': state.defense ? 'نعم' : 'لا',
+      'defense': 'مشمول',
       'university': $('o-uni').value.trim(),
       'department': state.dept,
       'defense_date': $('o-date').value || 'غير محدد',
-      'idea': $('o-idea').value.trim() || 'غير مكتوبة',
+      'idea': $('o-idea').value.trim() || 'غير محدد',
       'bot-field': ''
     };
     var body = new URLSearchParams(data).toString();
@@ -166,8 +170,8 @@
   // send
   $('send').addEventListener('click', function (e) {
     var c = checks();
-    if (!c.type) { e.preventDefault(); go(1); state.tried = true; render(); return; }
-    if (!(c.uni && c.dept)) { e.preventDefault(); state.tried = true; render(); return; }
+    if (!c.type) { e.preventDefault(); go(1); state.tried = true; render(); document.querySelector('#types .o-opt').focus(); return; }
+    if (!(c.uni && c.dept)) { e.preventDefault(); state.tried = true; render(); (c.uni ? $('dept-btn') : $('o-uni')).focus(); return; }
     $('send').href = waLink();
     saveOrder();
     setTimeout(function () { go(4); }, 50);

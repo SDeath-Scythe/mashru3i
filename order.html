@@ -13,7 +13,7 @@
 <meta property="og:title" content="اطلب مشروعك | مشروعي">
 <meta property="og:description" content="ثلاث خطوات ويوصلنا طلبك على واتساب، ونرد عليك بعرض السعر والمدة.">
 <meta property="og:url" content="https://mashru3i.netlify.app/order">
-<meta property="og:image" content="https://mashru3i.netlify.app/assets/og.png">
+<meta property="og:image" content="https://mashru3i.netlify.app/assets/og-v2.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -36,13 +36,13 @@ a{color:#1E2233;text-decoration:none}a:hover{color:#A3402A}
 .o-back{height:56px;padding:0 22px;border-radius:16px;border:2px solid #B5A07C;background:#FFFFFF;color:#1E2233;display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:700;font-size:16px}
 .o-back:hover{border-color:#C8502E}
 .o-lbl{font-weight:600;font-size:14px;color:#1E2233}
-.o-inp{height:56px;border-radius:14px;border:1.5px solid #CDB894;background:#FBF5EA;padding:0 16px;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:16px;color:#1E2233;width:100%;outline:0;transition:border-color .15s,box-shadow .15s,background-color .15s}
+.o-inp{height:56px;border-radius:14px;border:1.5px solid #9C8A6E;background:#FBF5EA;padding:0 16px;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:16px;color:#1E2233;width:100%;outline:0;transition:border-color .15s,box-shadow .15s,background-color .15s}
 .o-inp:focus{border-color:#C8502E;background:#FFFFFF;box-shadow:0 0 0 4px rgba(200,80,46,.12)}
 .o-inp::placeholder,.o-tel input::placeholder,textarea::placeholder{color:#6B7088;opacity:1}
-.o-tel{display:flex;align-items:center;height:56px;border-radius:14px;border:1.5px solid #CDB894;background:#FBF5EA;overflow:hidden;transition:border-color .15s,box-shadow .15s,background-color .15s}
+.o-tel{display:flex;align-items:center;height:56px;border-radius:14px;border:1.5px solid #9C8A6E;background:#FBF5EA;overflow:hidden;transition:border-color .15s,box-shadow .15s,background-color .15s}
 .o-tel:focus-within{border-color:#C8502E;background:#FFFFFF;box-shadow:0 0 0 4px rgba(200,80,46,.12)}
 .o-tel input{flex:1;min-width:0;height:100%;border:0;outline:0;background:transparent;padding:0 16px;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:17px;letter-spacing:1px;color:#1E2233;direction:ltr;text-align:left}
-.o-tel .cc{height:100%;display:flex;align-items:center;gap:6px;padding:0 14px;border-left:1.5px solid #CDB894;font-weight:700;font-size:15px;color:#A3402A;direction:ltr;flex-shrink:0}
+.o-tel .cc{height:100%;display:flex;align-items:center;gap:6px;padding:0 14px;border-left:1.5px solid #9C8A6E;font-weight:700;font-size:15px;color:#A3402A;direction:ltr;flex-shrink:0}
 .o-err{font-size:13px;font-weight:600;color:#A3261A}
 .o-bad{border-color:#D9534A!important}
 .o-opt{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;border-radius:20px;border:2px solid #E0CDAA;background:#FFFFFF;padding:18px;text-align:right;font-family:inherit;color:#1E2233;position:relative;transition:border-color .15s,background-color .15s}
@@ -53,7 +53,7 @@ a{color:#1E2233;text-decoration:none}a:hover{color:#A3402A}
 .o-radio{position:absolute;top:16px;left:16px;width:24px;height:24px;border-radius:50%;border:2px solid #A08E72;display:flex;align-items:center;justify-content:center;background:#FFFFFF}
 .o-opt.on .o-radio{border-color:#C8502E}
 .o-opt.on .o-radio::after{content:"";width:12px;height:12px;border-radius:50%;background:#C8502E}
-.o-select{height:56px;width:100%;border-radius:14px;border:1.5px solid #CDB894;background:#FBF5EA;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:16px;color:#1E2233;text-align:right}
+.o-select{height:56px;width:100%;border-radius:14px;border:1.5px solid #9C8A6E;background:#FBF5EA;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:16px;color:#1E2233;text-align:right}
 .o-select.open{border-color:#C8502E;background:#FFFFFF;box-shadow:0 0 0 4px rgba(200,80,46,.12)}
 .o-ph{color:#6B7088}
 .o-chev{transition:transform .2s;flex-shrink:0;color:#A3402A}
@@ -87,11 +87,6 @@ body{overflow:hidden}
 .o-steps li.done .o-steplbl,.o-steps li.active .o-steplbl{color:#1E2233}
 .o-line{flex:1;height:3px;border-radius:999px;min-width:16px;background:#E0CDAA}
 .o-steps li.done .o-line{background:#C8502E}
-.o-check{display:flex;align-items:center;gap:14px;border-radius:18px;border:2px solid #E0CDAA;background:#FFFFFF;padding:14px 16px;text-align:right;font-family:inherit;color:#1E2233}
-.o-check.on{border-color:#EBC3B4}
-.o-box{width:26px;height:26px;border-radius:8px;border:2px solid #C8502E;background:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#FFFFFF}
-.o-check:not(.on) .o-box svg{visibility:hidden}
-.o-check.on .o-box{background:#C8502E}
 .o-o .o-tick{visibility:hidden}
 .o-o.on .o-tick{visibility:visible}
 .o-o:focus-visible{outline:3px solid #C8502E;outline-offset:-3px}
@@ -109,6 +104,7 @@ a.o-btn{text-decoration:none}
   .o-acts .o-btn{order:1;width:100%}
   .o-acts .o-note{order:2;margin-top:0}
   .o-acts .o-back{order:3;width:100%;justify-content:center}
+  [data-step="1"] .o-btn{width:100%}
 }
 </style>
 </head>
@@ -162,11 +158,8 @@ a.o-btn{text-decoration:none}
                 <span style="display: flex; flex-direction: column; gap: 4px"><b class="o-disp" style="font-size: 18px">مشروع + بحث</b><span class="o-hint">المشروع والبحث سوا بطلب واحد</span></span>
               </button>
             </div>
-            <span class="o-err" id="err-type" hidden>اختار نوع الطلب حتى نكمل</span>
-            <button type="button" id="defense" role="checkbox" aria-checked="false" class="o-check">
-              <span class="o-box"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
-              <span style="display: flex; flex-direction: column; gap: 2px"><b style="font-size: 15px">أضف التحضير للمناقشة</b><span style="font-size: 13px; color: #5A607A">عرض تقديمي + جلسة على أسئلة اللجنة</span></span>
-            </button>
+            <span class="o-err" id="err-type" role="alert" hidden>اختار نوع الطلب حتى نكمل</span>
+            <p class="o-note"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>التحضير للمناقشة مشمول بكل طلب: عرض تقديمي وجلسة على أسئلة اللجنة.</span></p>
             <div style="display: flex; justify-content: flex-end">
               <button type="button" class="o-btn" data-next>التالي <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg></button>
             </div>
@@ -181,7 +174,7 @@ a.o-btn{text-decoration:none}
             <div style="display: flex; flex-direction: column; gap: 8px">
               <label class="o-lbl" for="o-name">الاسم الكامل</label>
               <input id="o-name" class="o-inp" type="text" dir="rtl" placeholder="مثال: علي حسن" autocomplete="name">
-              <span class="o-err" id="err-name" hidden>اكتب اسمك الكامل</span>
+              <span class="o-err" id="err-name" role="alert" hidden>اكتب اسمك الكامل</span>
             </div>
             <div style="display: flex; flex-direction: column; gap: 8px">
               <label class="o-lbl" for="o-phone">رقم الواتساب</label>
@@ -189,10 +182,10 @@ a.o-btn{text-decoration:none}
                 <span class="cc">+964</span>
                 <input id="o-phone" type="tel" inputmode="numeric" maxlength="14" placeholder="0770 123 4567" autocomplete="tel-national">
               </div>
-              <span class="o-err" id="err-phone" hidden>اكتب رقم عراقي صحيح يبدأ بـ 07 (11 رقم)</span>
+              <span class="o-err" id="err-phone" role="alert" hidden>اكتب رقم عراقي صحيح يبدأ بـ 07 (11 رقم)</span>
               <span id="hint-phone" style="font-size: 13px; color: #5A607A">نتواصل وياك عليه بعرض السعر</span>
             </div>
-            <div style="display: flex; justify-content: space-between; gap: 10px">
+            <div class="o-acts" style="display: flex; justify-content: space-between; gap: 10px">
               <button type="button" class="o-back" data-back><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg> السابق</button>
               <button type="button" class="o-btn" data-next>التالي <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg></button>
             </div>
@@ -208,7 +201,7 @@ a.o-btn{text-decoration:none}
               <div style="display: flex; flex-direction: column; gap: 8px">
                 <label class="o-lbl" for="o-uni">الجامعة</label>
                 <input id="o-uni" class="o-inp" type="text" dir="rtl" placeholder="مثال: الجامعة التكنولوجية">
-                <span class="o-err" id="err-uni" hidden>اكتب اسم جامعتك</span>
+                <span class="o-err" id="err-uni" role="alert" hidden>اكتب اسم جامعتك</span>
               </div>
               <div style="display: flex; flex-direction: column; gap: 8px">
                 <span class="o-lbl" id="o-dept-lbl">القسم</span>
@@ -219,7 +212,7 @@ a.o-btn{text-decoration:none}
                   </button>
                   <ul class="o-menu" id="dept-menu" role="listbox" aria-labelledby="o-dept-lbl" hidden></ul>
                 </div>
-                <span class="o-err" id="err-dept" hidden>اختار قسمك</span>
+                <span class="o-err" id="err-dept" role="alert" hidden>اختار قسمك</span>
               </div>
               <div style="display: flex; flex-direction: column; gap: 8px">
                 <label class="o-lbl" for="o-date">موعد المناقشة (تقريبي)</label>
@@ -250,11 +243,11 @@ a.o-btn{text-decoration:none}
         </div>
       </div>
       <div class="o-who">
-        <img src="assets/founder-avatar.jpg" width="48" height="48" loading="lazy" alt="صورة صالح صفاء">
+        <img src="assets/founder-avatar.jpg" width="48" height="48" loading="lazy" alt="">
         <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
           <b style="font-size: 15px">صالح صفاء، مؤسس مشروعي</b>
           <span style="font-size: 13px; line-height: 1.6; color: #5A607A">علوم الحاسوب، جامعة بغداد، دفعة 2026 بتقدير امتياز</span>
-          <a href="https://wa.me/9647713111325" target="_blank" rel="noopener" style="font-size: 13px; font-weight: 700; color: #A3402A; align-self: flex-start">عندك سؤال قبل ما تطلب؟ اسأل على واتساب</a>
+          <a href="https://wa.me/9647713111325" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; font-weight: 700; color: #A3402A; align-self: flex-start">عندك سؤال قبل ما تطلب؟ اسألنا على واتساب</a>
         </div>
       </div>
     </div>
@@ -276,6 +269,6 @@ a.o-btn{text-decoration:none}
   <input name="bot-field" type="text">
 </form>
 
-<script src="assets/order.js"></script>
+<script src="assets/order.js?v=2"></script>
 </body>
 </html>

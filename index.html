@@ -11,9 +11,9 @@
 <meta property="og:locale" content="ar_IQ">
 <meta property="og:site_name" content="مشروعي">
 <meta property="og:title" content="مشروعي | مشروع تخرّجك وبحثك من الفكرة إلى المناقشة">
-<meta property="og:description" content="مشاريع تخرّج برمجية نبنيها وياك أو إلك ونشرحلك كل سطر، بحوث وتقارير بمصادر موثّقة، وتحضير للمناقشة. بإشراف صالح صفاء، علوم الحاسوب، جامعة بغداد.">
+<meta property="og:description" content="مشاريع تخرّج برمجية نبنيها وياك أو إلك ونشرحلك كل سطر، بحوث وتقارير بمصادر موثّقة، وتحضير للمناقشة. يديره صالح صفاء، علوم الحاسوب، جامعة بغداد.">
 <meta property="og:url" content="https://mashru3i.netlify.app/">
-<meta property="og:image" content="https://mashru3i.netlify.app/assets/og.png">
+<meta property="og:image" content="https://mashru3i.netlify.app/assets/og-v2.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -36,12 +36,12 @@ a{color:#1E2233;text-decoration:none}a:hover{color:#A3402A}
 .m-btn-out:hover{border-color:#C8502E;color:#1E2233}
 .m-card{border-radius:24px;border:1.5px solid #E0CDAA;background:#FFFFFF}
 .m-tag{height:30px;padding:0 12px;border-radius:999px;background:#FDE7D8;color:#8F3520;font-size:13px;font-weight:600;display:inline-flex;align-items:center}
-.m-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;font-family:'Alexandria','IBM Plex Sans Arabic',sans-serif;font-weight:600;font-size:18px;color:#1E2233}
+.m-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;font-family:'Alexandria','IBM Plex Sans Arabic',sans-serif;font-weight:600;font-size:18px;line-height:1.5;color:#1E2233}
 .m-faq summary::-webkit-details-marker{display:none}
 .m-faq[open] summary .m-plus{transform:rotate(45deg)}
 .m-plus{transition:transform .2s;flex-shrink:0}
 .nav{position:sticky;top:0;z-index:40;transition:background-color .25s,box-shadow .25s}
-.nav.scrolled{background:rgba(255,255,255,.72)!important;-webkit-backdrop-filter:blur(14px) saturate(160%);backdrop-filter:blur(14px) saturate(160%);box-shadow:0 6px 20px rgba(30,34,51,.06)}
+.nav.scrolled{background:rgba(255,255,255,.94)!important;-webkit-backdrop-filter:blur(14px) saturate(160%);backdrop-filter:blur(14px) saturate(160%);box-shadow:0 6px 20px rgba(30,34,51,.06)}
 button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #C8502E;outline-offset:2px}
 
 .m-fhead{font-family:'Alexandria','IBM Plex Sans Arabic',sans-serif;font-weight:700;font-size:16px;color:#FBF5EA;margin-bottom:4px}
@@ -68,7 +68,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #C8
   .m-cta-top{height:44px!important;padding:0 16px!important;font-size:16px!important;border-radius:12px!important}
   .m-mnav{display:flex;flex-direction:column;gap:2px;padding:6px 16px 14px;border-top:1px solid #EFE4CF}
   .m-mnav a{height:48px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:16px}
-  .m-h1{font-size:32px!important;line-height:1.35!important}
+  .m-h1{font-size:min(32px,8.2vw)!important;line-height:1.35!important}
   .m-h2{font-size:28px!important}
   .m-sec{padding:64px 0!important}
 }
@@ -110,7 +110,7 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 .wa-chat{border-radius:18px;background:#EFEAE2;padding:12px 12px 14px;display:flex;flex-direction:column;gap:10px}
 .wa-top{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#1E2233}
 .wa-top img{width:30px;height:30px;border-radius:50%;object-fit:cover;display:block}
-.wa-app{margin-inline-start:auto;display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:#0E7A50}
+.wa-app{margin-inline-start:auto;display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:#0B6B46}
 .wa-bubble{position:relative;align-self:flex-start;max-width:94%;margin-inline-start:8px;background:#FFFFFF;border-radius:12px 0 12px 12px;padding:8px 12px 6px;font-size:14px;line-height:1.65;color:#1E2233;box-shadow:0 1px 1px rgba(30,34,51,.1)}
 .wa-bubble::before{content:"";position:absolute;top:0;right:-8px;border-top:9px solid #FFFFFF;border-right:9px solid transparent}
 .wa-time{display:block;text-align:left;font-size:11px;color:#667781;margin-top:2px}
@@ -175,6 +175,11 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 .f-card small{display:block;font-size:12px;color:rgba(251,245,234,.68)}
 .f-card b{display:block;font-size:16px;letter-spacing:.3px}
 
+/* focus ring stays visible on the clay CTA band */
+.m-cta-box a:focus-visible{outline-color:#FFFFFF}
+/* 44px tap targets for desktop nav and footer links */
+.m-nav-links a,.m-flink{padding:11px 0}
+
 /* floating WhatsApp (mobile only) */
 .m-fab{display:none}
 
@@ -186,7 +191,8 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
   .m-lead{font-size:16px}
   .ab{gap:28px}
   .ab-photo{max-width:none;flex-basis:100%}
-  .ab-photo img{aspect-ratio:1/1;object-position:50% 22%}
+  .ab-photo img{aspect-ratio:1/1;object-position:50% 0}
+  .ab-wrap{gap:24px!important}
   .ab-name{font-size:26px}
   .ab-quote p{font-size:16px}
   .wk-grid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;margin:0 -16px;padding:0 16px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
@@ -256,13 +262,13 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
         </span>
         <h1 class="m-disp m-h1" style="margin: 0; font-size: 56px; line-height: 1.3; font-weight: 800; text-wrap: balance">مشروع تخرّجك وبحثك<br><span style="color: #C8502E">من الفكرة<br class="m-br"> إلى المناقشة</span></h1>
         <p class="m-dsk" style="margin: 0; font-size: 19px; line-height: 1.85; color: #5A607A; max-width: 580px">مشروعي يديره صالح صفاء، خريج علوم الحاسوب من جامعة بغداد بتقدير امتياز. نبني مشروعك البرمجي وياك خطوة بخطوة، أو نبنيه إلك ونشرحلك كل سطر، ونجهّز وياك البحث والتقرير بمصادر موثّقة لحد يوم المناقشة.</p>
-        <p class="m-mob" style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A607A">بإشراف صالح صفاء، خريج علوم الحاسوب بامتياز. نبنيه وياك أو إلك، ونشرحلك كل سطر قبل المناقشة.</p>
+        <p class="m-mob" style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A607A">مشروعي يديره صالح صفاء، خريج علوم الحاسوب بامتياز. نبنيه وياك أو إلك، ونشرحلك كل سطر قبل المناقشة.</p>
         <div class="m-hero-btns">
-          <a href="order.html" class="m-btn m-btn-or">ابدأ طلبك الآن
+          <a href="order.html" class="m-btn m-btn-or">اطلب مشروعك
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg>
           </a>
           <a href="https://wa.me/9647713111325?text=%D9%87%D9%84%D8%A7%D8%8C%20%D8%B9%D9%86%D8%AF%D9%8A%20%D8%B3%D8%A4%D8%A7%D9%84%20%D8%B9%D9%86%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%A7%D9%84%D8%AA%D8%AE%D8%B1%D9%91%D8%AC" target="_blank" rel="noopener" class="m-btn m-btn-out m-wa-btn" id="hero-wa">
-            <img src="assets/founder-avatar.jpg" width="38" height="38" alt="صورة صالح صفاء">
+            <img src="assets/founder-avatar.jpg" width="38" height="38" alt="">
             <span class="m-wa-txt"><span>اسألنا على واتساب</span><small>صالح صفاء، مؤسس مشروعي</small></span>
           </a>
         </div>
@@ -287,13 +293,13 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
           <ol class="tk" aria-label="مراحل الطلب في المثال">
             <li class="tk-done"><span class="tk-dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span class="tk-txt">استلام الطلب وتحليل الفكرة</span></li>
             <li class="tk-done"><span class="tk-dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span class="tk-txt">التصميم وقاعدة البيانات</span></li>
-            <li class="tk-now"><span class="tk-dot"><span></span></span><span class="tk-txt">برمجة التطبيق <em>جارٍ الآن</em></span></li>
+            <li class="tk-now"><span class="tk-dot"><span></span></span><span class="tk-txt">برمجة التطبيق <em>هسه نشتغل عليه</em></span></li>
             <li><span class="tk-dot"></span><span class="tk-txt">البحث والتقرير</span></li>
             <li><span class="tk-dot"></span><span class="tk-txt">شرح الكود والتحضير للمناقشة</span></li>
           </ol>
           <div class="wa-chat">
             <div class="wa-top">
-              <img src="assets/founder-avatar.jpg" width="30" height="30" alt="صورة صالح صفاء">
+              <img src="assets/founder-avatar.jpg" width="30" height="30" alt="">
               <span>صالح صفاء</span>
               <span class="wa-app"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.6Z"></path></svg>واتساب</span>
             </div>
@@ -306,12 +312,13 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 
   <!-- FOUNDER -->
   <section id="about" class="m-sec" style="padding: 104px 0">
-    <div class="m-wrap ab">
+    <div class="m-wrap ab-wrap" style="display: flex; flex-direction: column; gap: 36px">
+      <h2 class="m-disp m-h2" style="margin: 0; font-size: 40px; font-weight: 800; line-height: 1.35">منو وراء مشروعي؟</h2>
+      <div class="ab">
       <figure class="ab-photo">
         <img src="assets/founder.jpg" width="800" height="1000" loading="lazy" alt="صالح صفاء بوشاح تخرّج علوم الحاسوب، دفعة 2026">
       </figure>
       <div class="ab-txt">
-        <h2 class="m-disp m-h2" style="margin: 0; font-size: 40px; font-weight: 800; line-height: 1.35">منو وراء مشروعي؟</h2>
         <div>
           <p class="m-disp ab-name">صالح صفاء</p>
           <p class="ab-role">مؤسس مشروعي</p>
@@ -319,14 +326,16 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
         <ul class="ab-facts">
           <li><span class="ab-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"></path><path d="M6 12v5c3 2 9 2 12 0v-5"></path></svg></span><span><b>علوم الحاسوب، جامعة بغداد</b><small>دفعة 2026</small></span></li>
           <li><span class="ab-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 14.2-1.5 7.8 5-3 5 3-1.5-7.8"></path></svg></span><span><b>تخرّجت بتقدير امتياز</b><small>التقدير العام</small></span></li>
-          <li><span class="ab-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg></span><span><b>مشروع تخرّجي تقييمه امتياز</b><small>CodeSync، بيئة برمجة لتدريس الصفوف</small></span></li>
+          <li><span class="ab-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg></span><span><b>مشروع تخرّجي تقييمه امتياز</b><small>CodeSync، بيئة برمجة لتدريس صفوف البرمجة</small></span></li>
         </ul>
+        <!-- Draft quote: the owner still has to approve these three lines. -->
         <blockquote class="ab-quote">
-          <p>توني مخلّص مشروع تخرّجي، وأعرف شكد تكون السنة الأخيرة ضغط: مشروع وبحث ولجنة تسأل.</p>
-          <p>سويت مشروعي حتى يكون وياك واحد يبني المشروع وياك أو إلك، ويشرحلك كل سطر.</p>
+          <p>توّي مخلّص مشروع تخرّجي، وأعرف شكد تكون السنة الأخيرة ضغط: مشروع وبحث ولجنة تسأل.</p>
+          <p>سويت «مشروعي» حتى تلكى واحد يبني مشروعك وياك أو إلك، ويشرحلك كل سطر.</p>
           <p>اللي يهمني تدخل المناقشة فاهم شغلك، مو حافظه.</p>
         </blockquote>
         <a href="#work" class="m-more">شوف مشروع تخرّجي <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg></a>
+      </div>
       </div>
     </div>
   </section>
@@ -341,7 +350,7 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
       </div>
       <div class="wk-grid">
         <figure>
-          <img src="assets/work/follow.jpg" width="714" height="516" loading="lazy" alt="لقطة من CodeSync: الطالب يتابع محرر المدرّس مباشرة بوضع القراءة فقط">
+          <img src="assets/work/follow-crop.jpg" width="538" height="391" loading="lazy" alt="لقطة من CodeSync: الطالب يتابع محرر المدرّس مباشرة بوضع القراءة فقط">
           <figcaption><b>وضع المتابعة.</b> محرر المدرّس يوصل لكل طالب مباشرة، للقراءة فقط.</figcaption>
         </figure>
         <figure>
@@ -349,12 +358,12 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
           <figcaption><b>لوحة المدرّس.</b> يشوف محرر كل طالب وحالته: شغّال، خامل، أو بيه خطأ.</figcaption>
         </figure>
         <figure>
-          <img src="assets/work/terminal.jpg" width="708" height="517" loading="lazy" alt="محرر CodeSync وتحته تيرمنل يشغّل ملف JavaScript">
+          <img src="assets/work/terminal-crop.jpg" width="526" height="383" loading="lazy" alt="محرر CodeSync وتحته تيرمنل يشغّل ملف JavaScript">
           <figcaption><b>بيئة لكل واحد.</b> كل شخص يبرمج ببيئة سحابية معزولة إله، وبيها تيرمنل حقيقي.</figcaption>
         </figure>
         <figure>
           <img src="assets/work/call.jpg" width="724" height="516" loading="lazy" alt="مكالمة ومشاركة شاشة داخل CodeSync جنب محرر الكود">
-          <figcaption><b>الصف كله بمكانه.</b> صوت وفيديو ومشاركة شاشة ودردشة جنب الكود.</figcaption>
+          <figcaption><b>المكالمة جنب الكود.</b> صوت وفيديو ومشاركة شاشة ودردشة، كلها جنب المحرر.</figcaption>
         </figure>
       </div>
       <p class="wk-hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg>اسحب حتى تشوف باقي اللقطات</p>
@@ -378,7 +387,7 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
         <article class="sv-card">
           <span class="sv-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg></span>
           <h3 class="m-disp" style="margin: 0; font-size: 22px; font-weight: 700">مشاريع تخرّج برمجية</h3>
-          <p>نبنيه وياك خطوة بخطوة، أو نبنيه إلك ونشرحلك كل سطر. من تحليل المتطلبات إلى نسخة شغّالة تعرضها قدّام اللجنة، مع الكود المصدري.</p>
+          <p>من تحليل المتطلبات إلى نسخة شغّالة تعرضها قدّام اللجنة، مع الكود المصدري، وبالطريقة اللي تختارها.</p>
           <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto"><span class="m-tag">مواقع ويب</span><span class="m-tag">تطبيقات موبايل</span><span class="m-tag">ذكاء اصطناعي</span><span class="m-tag">إنترنت الأشياء (IoT)</span></div>
           <a href="order.html?type=project" class="m-more">اطلب مشروعك <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg></a>
         </article>
@@ -394,7 +403,7 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
           <h3 class="m-disp" style="margin: 0; font-size: 22px; font-weight: 700">العرض والتحضير للمناقشة</h3>
           <p>سلايدات مرتّبة تحكي قصة مشروعك، وجلسة نمرّ بيها على الأسئلة المتوقعة من اللجنة.</p>
           <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto"><span class="m-tag">عرض تقديمي</span><span class="m-tag">تدريب على الأسئلة</span></div>
-          <a href="order.html?defense=1" class="m-more">أضفها لطلبك <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg></a>
+          <span class="m-more" style="color: #1E2233"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8502E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>مشمول بكل طلب</span>
         </article>
       </div>
 
@@ -403,14 +412,14 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
         <div class="md-row">
           <div class="md-opt">
             <b>نبنيه وياك خطوة بخطوة</b>
-            <p>تشارك بكل مرحلة، ونفهّمك شنو نسوي وليش، فتوصل للمناقشة وأنت عايش المشروع من أوله.</p>
+            <p>تشارك بكل مرحلة، ونفهّمك شنو نسوي وليش، وهيج توصل للمناقشة وأنت عايش المشروع من أوله.</p>
           </div>
           <div class="md-opt">
             <b>نبنيه إلك ونشرحلك كل سطر</b>
             <p>نبني المشروع كامل، وقبل المناقشة نمرّ وياك على الكود سطر سطر، شنو يسوي وليش انكتب هيج.</p>
           </div>
         </div>
-        <p class="md-note"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8502E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>وبالطريقتين، كل طلب بيه شرح للكود وتحضير للمناقشة.</p>
+        <p class="md-note"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8502E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>وبالطريقتين، نشرحلك الكود كامل ونحضّرك للمناقشة.</p>
       </div>
 
       <p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A607A">نشتغل وية أغلب أقسام الحاسوب والهندسة: علوم وهندسة الحاسوب، هندسة البرمجيات، نظم المعلومات، الاتصالات، الذكاء الاصطناعي، الأمن السيبراني، والإلكترونيك والسيطرة.</p>
@@ -426,7 +435,7 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
       </div>
       <ol class="tk tk-lg" style="flex: 999 1 520px; min-width: 0">
         <li><span class="tk-dot">1</span><div><h3>ترسل فكرتك</h3><p>تعبّي الطلب بثلاث خطوات أو تسألنا على واتساب، وتكتب الفكرة أو عنوان البحث وموعد المناقشة.</p></div></li>
-        <li><span class="tk-dot">2</span><div><h3>نراجعها ونرسلك عرض السعر</h3><p>كل مشروع يتسعّر لحاله بعد المراجعة. نتفق على المدة وعلى الطريقة: وياك خطوة بخطوة، أو إلك ونشرحلك كل سطر.</p></div></li>
+        <li><span class="tk-dot">2</span><div><h3>نراجعها ونرسلك عرض السعر</h3><p>كل مشروع يتسعّر لحاله بعد المراجعة، ونتفق على المدة والطريقة.</p></div></li>
         <li><span class="tk-dot">3</span><div><h3>نبدي على مراحل</h3><p>تدفع الدفعة الأولى بزين كاش لما نبدي بالشغل، وتوصلك كل مرحلة للمراجعة وتطلب تعديلاتك أول بأول.</p></div></li>
         <li><span class="tk-dot">4</span><div><h3>تشوفه شغّال وتتجهّز</h3><p>تشوف المشروع شغّال قدامك وبعدها تدفع الدفعة الثانية، ونشرحلك الكود كله قبل يوم المناقشة.</p></div></li>
       </ol>
@@ -439,27 +448,27 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
     <div class="m-faqs-in" style="display: flex; flex-wrap: wrap; gap: 32px 56px; border-top: 1.5px solid #E0CDAA; padding-top: 72px">
       <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 12px">
         <h2 class="m-disp m-h2" style="margin: 0; font-size: 40px; font-weight: 800; line-height: 1.35">قبل ما تطلب</h2>
-        <p class="m-lead">عندك سؤال ثاني؟ <a href="https://wa.me/9647713111325" target="_blank" rel="noopener" style="color: #A3402A; font-weight: 700; text-decoration: underline; text-underline-offset: 4px">اسألنا على واتساب</a></p>
+        <p class="m-lead">عندك سؤال ثاني؟ <a href="https://wa.me/9647713111325" target="_blank" rel="noopener" style="display: inline-block; padding: 10px 0; color: #A3402A; font-weight: 700; text-decoration: underline; text-underline-offset: 4px">اسألنا على واتساب</a></p>
       </div>
       <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
         <details class="m-faq m-card"><summary>شلون يتحدد السعر؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">كل مشروع يتسعّر لحاله. بعد ما ترسل الطلب نراجع الفكرة والمتطلبات، ونرسلك عرض سعر على واتساب قبل أي التزام. والدفع بزين كاش على دفعتين.</p></details>
         <details class="m-faq m-card"><summary>شلون يكون الدفع؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">بزين كاش، وعلى دفعتين: الأولى لما نبدي بالشغل، والثانية بعد ما تشوف مشروعك شغّال قدامك.</p></details>
-        <details class="m-faq m-card"><summary>شنو الفرق بين الطريقتين؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">بالأولى نبني المشروع وياك خطوة بخطوة، وأنت تشارك بكل مرحلة. وبالثانية نبنيه إلك كامل، وبعدها نشرحلك كل سطر قبل المناقشة. أنت تختار اللي يناسب وقتك، وبالحالتين أكو شرح للكود وتحضير للمناقشة.</p></details>
-        <details class="m-faq m-card"><summary>راح أفهم الكود مالي بالمناقشة؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">هذا الهدف. كل طلب بيه شرح كامل للكود وتحضير للمناقشة: نمرّ وياك على كل جزء، شنو يسوي وليش انكتب هيج، حتى تكدر تشرحه للجنة بكلامك.</p></details>
-        <details class="m-faq m-card"><summary>كم يستغرق تنفيذ المشروع؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">تتحدد المدة حسب حجم الفكرة، ونتفق عليها وياك قبل البدء ونسلّمك على مراحل.</p></details>
-        <details class="m-faq m-card"><summary>هل أستلم الكود المصدري؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">نعم، تستلم الكود كامل مع شرح طريقة التشغيل ونسخة جاهزة للعرض.</p></details>
-        <details class="m-faq m-card"><summary>تساعدوني بيوم المناقشة؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">نجهّز العرض التقديمي ونمرّ وياك على الأسئلة المتوقعة من اللجنة لحد ما تكون واثق من كل جزء.</p></details>
+        <details class="m-faq m-card"><summary>شنو الفرق بين الطريقتين؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">بالأولى نبني المشروع وياك خطوة بخطوة، وأنت تشارك بكل مرحلة. وبالثانية نبنيه إلك كامل، وبعدها نشرحلك كل سطر قبل المناقشة. أنت تختار اللي يناسب وقتك، وبالحالتين نشرحلك الكود كامل ونحضّرك للمناقشة.</p></details>
+        <details class="m-faq m-card"><summary>راح أفهم الكود مالي قبل المناقشة؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">إي. بكل مشروع برمجي نمرّ وياك على الكود كامل قبل المناقشة: كل جزء، شنو يسوي وليش انكتب هيج، حتى تكدر تشرحه للجنة بكلامك.</p></details>
+        <details class="m-faq m-card"><summary>شكد ياخذ المشروع وقت؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">تتحدد المدة حسب حجم الفكرة، ونتفق عليها وياك قبل ما نبدي ونسلّمك على مراحل.</p></details>
+        <details class="m-faq m-card"><summary>راح أستلم الكود المصدري؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">إي، تستلم الكود كامل مع شرح طريقة التشغيل ونسخة جاهزة للعرض.</p></details>
+        <details class="m-faq m-card"><summary>تساعدوني بيوم المناقشة؟<svg class="m-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A3402A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></summary><p style="margin: 0; padding: 0 24px 22px; font-size: 16px; line-height: 1.8; color: #5A607A">إي، التحضير للمناقشة مشمول بكل طلب: نجهّز العرض التقديمي ونمرّ وياك على الأسئلة المتوقعة من اللجنة لحد ما تكون واثق من كل جزء.</p></details>
       </div>
     </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="m-cta" style="padding: 0 0 104px">
+  <section class="m-cta" id="cta" style="padding: 0 0 104px">
     <div class="m-wrap">
       <div class="m-cta-box" style="border-radius: 32px; background: #C8502E; color: #FFFFFF; padding: 52px 44px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between">
         <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 10px">
-          <h2 class="m-disp m-h2" style="margin: 0; font-size: 38px; font-weight: 800; line-height: 1.35">موعد مناقشتك يقترب؟</h2>
+          <h2 class="m-disp m-h2" style="margin: 0; font-size: 38px; font-weight: 800; line-height: 1.35">قرّبت مناقشتك؟</h2>
           <p style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.7">ابدأ اليوم وخلّي وقتك للمراجعة، مو للركض.</p>
         </div>
         <a href="order.html" class="m-btn" style="background: #FFFFFF; color: #A3402A">اطلب مشروعك</a>
@@ -474,12 +483,12 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
         <div style="flex: 1.7 1 320px; display: flex; flex-direction: column; gap: 20px; max-width: 420px">
           <a href="#top" style="display: flex; align-items: center; gap: 12px; color: #FBF5EA">
             <svg viewBox="0 0 120 120" width="50" height="50" aria-hidden="true"><rect width="120" height="120" rx="30" fill="#C8502E"/><path d="M28 64 L46 82 L77 51" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(82 41) rotate(22) scale(1.5)"><path d="M-11 2.5V9.5Q0 15 11 9.5V2.5L0 7Z" fill="#14204A"/><path d="M-18 0L0 -7.5L18 0L0 7.5Z" fill="#14204A"/></g><path d="M102.41 50.54V69.29" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round"/><rect x="99.81" y="68.29" width="5.2" height="7.5" rx="1.6" fill="#FFFFFF"/></svg>
-            <span style="display: flex; flex-direction: column"><span class="m-disp" style="font-weight: 800; font-size: 24px">مشروعي<span style="color: #C8502E">.</span></span><span style="font-size: 13px; color: rgba(251,245,234,.72)">من الفكرة إلى المناقشة</span></span>
+            <span style="display: flex; flex-direction: column; gap: 4px"><span class="m-disp" style="font-weight: 800; font-size: 24px; line-height: 1.45">مشروعي<span style="color: #C8502E">.</span></span><span style="font-size: 13px; color: rgba(251,245,234,.72)">من الفكرة إلى المناقشة</span></span>
           </a>
           <p class="m-dsk" style="margin: 0; font-size: 15px; line-height: 1.9; color: rgba(251,245,234,.74)">مشروعي يديره صالح صفاء، خريج علوم الحاسوب من جامعة بغداد. نبني وياك مشروع تخرّجك وبحثك، ونشرحلك كل سطر قبل المناقشة.</p>
         </div>
 
-        <nav class="m-dsk" aria-label="روابط سريعة" style="flex: 1 1 150px; display: flex; flex-direction: column; gap: 14px">
+        <nav class="m-dsk" aria-label="روابط سريعة" style="flex: 1 1 150px; display: flex; flex-direction: column; gap: 0">
           <span class="m-fhead">روابط سريعة</span>
           <a href="#about" class="m-flink">المؤسس</a>
           <a href="#work" class="m-flink">شغل حقيقي</a>
@@ -533,16 +542,20 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
   });
   document.addEventListener('click', function (e) { if (!nav.contains(e.target) && !mnav.hasAttribute('hidden')) closeMenu(); });
 
-  // Floating WhatsApp button: hidden while the hero WhatsApp button or the
-  // footer contact cards are on screen, so it never doubles up or covers them.
+  // Floating WhatsApp button: hidden while the hero WhatsApp button, the FAQ
+  // (it has its own WhatsApp link, and the button would cover the "+" toggles),
+  // the CTA band (it would sit on the order button) or the footer contact
+  // cards are on screen.
   var fab = document.getElementById('fab');
   if (!('IntersectionObserver' in window)) { fab.classList.remove('m-fab-off'); return; }
   var vis = {};
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) { vis[en.target.id] = en.isIntersecting; });
-    fab.classList.toggle('m-fab-off', !!(vis['hero-wa'] || vis.contact));
+    fab.classList.toggle('m-fab-off', !!(vis['hero-wa'] || vis.faq || vis.cta || vis.contact));
   });
   io.observe(document.getElementById('hero-wa'));
+  io.observe(document.getElementById('faq'));
+  io.observe(document.getElementById('cta'));
   io.observe(document.getElementById('contact'));
 })();
 </script>

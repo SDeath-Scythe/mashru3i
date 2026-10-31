@@ -9,12 +9,13 @@
     'الذكاء الاصطناعي', 'الأمن السيبراني', 'إنترنت الأشياء (IoT)', 'الإلكترونيك والسيطرة', 'قسم آخر'];
 
   // Nothing is pre-selected, unless the visitor came from a specific service
-  // link on the home page (order.html?type=project|research|both).
-  // Defence preparation is part of every order, so there is no option for it.
-  var state = { step: 1, type: '', dept: '', tried: false };
+  // link on the home page (order.html?type=project|research|both, ?defense=1).
+  // Defence preparation is an optional add-on with its own price.
+  var state = { step: 1, type: '', defense: false, dept: '', tried: false };
   try {
     var q = new URLSearchParams(window.location.search);
     if (TITLES.hasOwnProperty(q.get('type'))) state.type = q.get('type');
+    if (q.get('defense') === '1') state.defense = true;
   } catch (err) { /* very old browser: start with nothing selected */ }
 
   var $ = function (id) { return document.getElementById(id); };
@@ -52,7 +53,7 @@
       '*طلب جديد من موقع مشروعي*',
       '',
       '*نوع الطلب:* ' + (TITLES[state.type] || 'غير محدد'),
-      '*التحضير للمناقشة:* مشمول',
+      '*إضافة التحضير للمناقشة:* ' + (state.defense ? 'نعم' : 'لا'),
       '*الاسم:* ' + $('o-name').value.trim(),
       '*رقم الواتساب:* ' + L + '0' + d.slice(0, 3) + ' ' + d.slice(3, 6) + ' ' + d.slice(6) + L,
       '*الجامعة:* ' + $('o-uni').value.trim(),
@@ -92,6 +93,8 @@
       b.classList.toggle('on', on);
       b.setAttribute('aria-checked', on ? 'true' : 'false');
     });
+    $('defense').classList.toggle('on', state.defense);
+    $('defense').setAttribute('aria-checked', state.defense ? 'true' : 'false');
 
     setErr('type', show && !c.type, null, $('types'));
     setErr('name', show && !c.name, $('o-name'));
@@ -120,6 +123,7 @@
   document.querySelectorAll('#types .o-opt').forEach(function (b) {
     b.addEventListener('click', function () { state.type = b.dataset.type; render(); });
   });
+  $('defense').addEventListener('click', function () { state.defense = !state.defense; render(); });
 
   // navigation
   document.querySelectorAll('[data-next]').forEach(function (b) {
@@ -147,7 +151,7 @@
       'name': $('o-name').value.trim(),
       'phone': '0' + d,
       'type': TITLES[state.type] || 'غير محدد',
-      'defense': 'مشمول',
+      'defense': state.defense ? 'نعم' : 'لا',
       'university': $('o-uni').value.trim(),
       'department': state.dept,
       'defense_date': $('o-date').value || 'غير محدد',
